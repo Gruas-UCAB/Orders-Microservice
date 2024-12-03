@@ -1,5 +1,5 @@
 ﻿using OrdersMicroservice.Core.Domain;
-namespace OrdersMicroservice.src.policy.domain.exceptions
+namespace OrdersMicroservice.src.contract.domain.exceptions
 {
     public class InvalidPolicyException : DomainException
     {

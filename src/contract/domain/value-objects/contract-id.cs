@@ -1,5 +1,6 @@
 ﻿
 
+
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.exceptions;
 
