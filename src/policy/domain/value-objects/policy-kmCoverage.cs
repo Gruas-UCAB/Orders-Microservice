@@ -5,15 +5,15 @@ using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.policy.domain.exceptions;
 
 namespace OrdersMicroservice.src.policy.domain.value_objects;
-public class PolicyName : IValueObject<PolicyName>
+public class PolicyKmCoverage : IValueObject<PolicyKmCoverage>
 {
  private readonly string _name;
 
-        public PolicyName(string name)
+        public PolicyKmCoverage(string name)
         {
             if (name.Length < 2 || name.Length > 50)
             {
-                throw new InvalidPolicyNameException();
+                throw new InvalidPolicyKmCoverageException();
             }
             this._name = name;
         }
@@ -21,7 +21,7 @@ public class PolicyName : IValueObject<PolicyName>
         {
             return this._name;
         }
-        public bool Equals(PolicyName other)
+        public bool Equals(PolicyKmCoverage other)
         {
             return _name == other.GetName();
         }
