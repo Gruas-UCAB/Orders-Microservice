@@ -1,6 +1,6 @@
-﻿using UsersMicroservice.core.Application;
+﻿using OrdersMicroservice.core.Application;
 
-namespace UsersMicroservice.core.Infrastructure
+namespace OrdersMicroservice.core.Infrastructure
 {
     public class UUIDGenerator : IIdGenerator<string>
     {

@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.core.Application
+﻿namespace OrdersMicroservice.core.Application
 {
     public interface ITimer
     {

@@ -1,6 +1,6 @@
-﻿using UsersMicroservice.Core.Common;
+﻿using OrdersMicroservice.Core.Common;
 
-namespace UsersMicroservice.Core.Application
+namespace OrdersMicroservice.Core.Application
 {
     public interface IApplicationService<T, R>
     {
