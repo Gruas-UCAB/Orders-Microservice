@@ -1,5 +1,4 @@
-﻿/*
-using OrdersMicroservice.Core.Domain;
+﻿using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
 
 namespace OrdersMicroservice.src.contract.domain.events
@@ -25,5 +24,5 @@ namespace OrdersMicroservice.src.contract.domain.events
     }
 }
 
-*/
+
 
