@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace UsersMicroservice.Core.Domain
+namespace OrdersMicroservice.Core.Domain
 {
     public abstract class AggregateRoot<T>(T id) : Entity<T>(id) where T : IValueObject<T>
     {

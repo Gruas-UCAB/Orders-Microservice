@@ -1,0 +1,6 @@
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.AssemblyInfoInputs.cache
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.AssemblyInfo.cs
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.csproj.CoreCompileInputs.cache
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ANTONIO\Desktop\ProyectoDW-GRUA\RepoBackend-Order\obj\Debug\net8.0\OrdersMicroservice.sourcelink.json

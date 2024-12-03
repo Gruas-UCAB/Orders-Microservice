@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.Core.Application
+﻿namespace OrdersMicroservice.Core.Application
 {
     public class ApplicationException : Exception
     {

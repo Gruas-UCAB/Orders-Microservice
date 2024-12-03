@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.Core.Common
+﻿namespace OrdersMicroservice.Core.Common
 {
     public class Result<T>
     {
