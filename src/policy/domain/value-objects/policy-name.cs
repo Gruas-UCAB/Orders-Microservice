@@ -5,11 +5,11 @@ using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.policy.domain.exceptions;
 
 namespace OrdersMicroservice.src.policy.domain.value_objects;
-public class PolicytName : IValueObject<PolicytName>
+public class PolicyName : IValueObject<PolicyName>
 {
  private readonly string _name;
 
-        public PolicytName(string name)
+        public PolicyName(string name)
         {
             if (name.Length < 2 || name.Length > 50)
             {
