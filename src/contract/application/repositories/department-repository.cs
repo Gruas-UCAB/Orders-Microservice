@@ -1,4 +1,5 @@
-﻿using OrdersMicroservice.core.Common;
+﻿
+/*using OrdersMicroservice.core.Common;
 using OrdersMicroservice.src.contract.domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
 
@@ -12,3 +13,4 @@ namespace OrdersMicroservice.src.contract.application.repositories
 
     }
 }
+*/

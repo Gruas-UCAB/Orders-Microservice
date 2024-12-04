@@ -7,22 +7,22 @@ using OrdersMicroservice.src.policy.domain.exceptions;
 namespace OrdersMicroservice.src.policy.domain.value_objects;
 public class PolicyKmCoverage : IValueObject<PolicyKmCoverage>
 {
- private readonly string _name;
+ private readonly string _kmCoverage; // kmCoverage string or int
 
-        public PolicyKmCoverage(string name)
+        public PolicyKmCoverage(string kmCoverage)
         {
-            if (name.Length < 2 || name.Length > 50)
+            if (kmCoverage.Length < 2 || kmCoverage.Length > 50)
             {
                 throw new InvalidPolicyKmCoverageException();
             }
-            this._name = name;
+            this._kmCoverage = kmCoverage;
         }
-        public string GetName()
+        public string GetKmCoverage()
         {
-            return this._name;
+            return this._kmCoverage;
         }
         public bool Equals(PolicyKmCoverage other)
         {
-            return _name == other.GetName();
+            return _kmCoverage == other.GetKmCoverage();
         }
 }
