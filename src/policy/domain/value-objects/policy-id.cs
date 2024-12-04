@@ -5,10 +5,10 @@ using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.policy.domain.exceptions;
 
 namespace OrdersMicroservice.src.policy.domain.value_objects;
-public class PolicytId : IValueObject<PolicytId>
+public class PolicyId : IValueObject<PolicyId>
 {
     private readonly string _id;
-    public PolicytId(string id)
+    public PolicyId(string id)
     {
         if (UUIDValidator.IsValid(id))
         {
@@ -25,7 +25,7 @@ public class PolicytId : IValueObject<PolicytId>
         return _id;
     }
 
-    public bool Equals(PolicytId other)
+    public bool Equals(PolicyId other)
     {
         return _id == other.GetId();
     }

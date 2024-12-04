@@ -7,22 +7,22 @@ using OrdersMicroservice.src.policy.domain.exceptions;
 namespace OrdersMicroservice.src.policy.domain.value_objects;
 public class PolicyMonetaryCoverage : IValueObject<PolicyMonetaryCoverage>
 {
- private readonly string _name;
+ private readonly string _monetaryCoverage;// string o int ?
 
-        public PolicyMonetaryCoverage(string name)
+        public PolicyMonetaryCoverage(string monetaryCoverage)
         {
-            if (name.Length < 2 || name.Length > 50)
+            if (monetaryCoverage.Length < 2 || monetaryCoverage.Length > 50)
             {
                 throw new InvalidPolicyMonetaryCoverageException();
             }
-            this._name = name;
+            this._monetaryCoverage = monetaryCoverage;
         }
-        public string GetName()
+        public string GetMonetaryCoverage()
         {
-            return this._name;
+            return this._monetaryCoverage;
         }
         public bool Equals(PolicyMonetaryCoverage other)
         {
-            return _name == other.GetName();
+            return _monetaryCoverage == other.GetMonetaryCoverage();
         }
 }
