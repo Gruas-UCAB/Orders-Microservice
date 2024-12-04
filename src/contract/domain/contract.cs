@@ -1,4 +1,5 @@
-﻿using OrdersMicroservice.Core.Domain;
+﻿/*
+using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.events;
 using OrdersMicroservice.src.contract.domain.exceptions;
 using OrdersMicroservice.src.contract.domain.value_objects;
@@ -99,3 +100,4 @@ namespace OrdersMicroservice.src.contract.domain
 
     }
 }
+*/
