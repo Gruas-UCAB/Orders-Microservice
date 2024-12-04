@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\domain\\value-objects\\policy-kmcoverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\domain\\value-objects\\policy-kmcoverage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\infrastructure\\validators\\create-policy.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\infrastructure\\validators\\create-policy.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\infrastructure\\models\\mongo-policy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\infrastructure\\models\\mongo-policy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\infrastructure\\policy.controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\infrastructure\\policy.controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,10 +50,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
@@ -43,14 +59,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "no-contracts-found.exception.cs",
-              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs",
-              "RelativeDocumentMoniker": "src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs",
-              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs",
-              "RelativeToolTip": "src\\contract\\application\\repositories\\exceptions\\no-contracts-found.exception.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA9AAAAAAAAAA==",
+              "Title": "policy-kmCoverage.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\domain\\value-objects\\policy-kmCoverage.cs",
+              "RelativeDocumentMoniker": "src\\policy\\domain\\value-objects\\policy-kmCoverage.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\domain\\value-objects\\policy-kmCoverage.cs",
+              "RelativeToolTip": "src\\policy\\domain\\value-objects\\policy-kmCoverage.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T01:29:00.85Z",
+              "WhenOpened": "2024-12-04T18:36:01.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "create-policy.validator.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\validators\\create-policy.validator.cs",
+              "RelativeDocumentMoniker": "src\\policy\\infrastructure\\validators\\create-policy.validator.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\validators\\create-policy.validator.cs",
+              "RelativeToolTip": "src\\policy\\infrastructure\\validators\\create-policy.validator.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T17:18:52.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "policy.controller.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\policy.controller.cs",
+              "RelativeDocumentMoniker": "src\\policy\\infrastructure\\policy.controller.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\policy.controller.cs",
+              "RelativeToolTip": "src\\policy\\infrastructure\\policy.controller.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T17:17:46.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "mongo-policy-repository.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs",
+              "RelativeDocumentMoniker": "src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs",
+              "RelativeToolTip": "src\\policy\\infrastructure\\repositories\\mongo-policy-repository.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T16:45:44.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "mongo-policy.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\models\\mongo-policy.cs",
+              "RelativeDocumentMoniker": "src\\policy\\infrastructure\\models\\mongo-policy.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\infrastructure\\models\\mongo-policy.cs",
+              "RelativeToolTip": "src\\policy\\infrastructure\\models\\mongo-policy.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T16:45:35.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "create-policy.command-handler.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs",
+              "RelativeDocumentMoniker": "src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs",
+              "RelativeToolTip": "src\\policy\\application\\commands\\create-policy\\create-policy.command-handler.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwCAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T16:15:51.487Z",
               "EditorCaption": ""
             }
           ]
