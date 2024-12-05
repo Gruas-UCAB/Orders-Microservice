@@ -33,12 +33,12 @@ namespace OrdersMicroservice.src.policy.domain
             return _name.GetName();
         }
         
-        public string GetMonetaryCoverage()
+        public decimal GetMonetaryCoverage()
         {
             return _monetaryCoverage.GetMonetaryCoverage();
         }
 
-        public string GetkmCoverage()
+        public decimal GetkmCoverage()
         {
             return _kmCoverage.GetKmCoverage();
         }
@@ -84,6 +84,18 @@ namespace OrdersMicroservice.src.policy.domain
         {
             Console.WriteLine("Ya reacciono");
             _name = new PolicyName(Event.Name);
+        }
+
+        private void OnPolicyMonetaryCoverageUpdatedEvent( PolicyMonetaryCoverageUpdated Event)
+        {
+            Console.WriteLine("Ya reacciono");
+            _monetaryCoverage = new PolicyMonetaryCoverage(Event.MonetaryCoverage);
+        }
+
+        private void OnPolicykmCoverageUpdatedEvent( PolicykmCoverageUpdated Event)
+        {
+            Console.WriteLine("Ya reacciono");
+            _kmCoverage = new PolicyKmCoverage(Event.KmCoverage);
         }
 
     }

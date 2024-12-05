@@ -7,19 +7,19 @@ using OrdersMicroservice.src.policy.domain.exceptions;
 namespace OrdersMicroservice.src.policy.domain.value_objects;
 public class PolicyKmCoverage : IValueObject<PolicyKmCoverage>
 {
- private readonly string _kmCoverage; // kmCoverage string or int
+ private readonly decimal _kmCoverage; // kmCoverage string or numero
 
-        public PolicyKmCoverage(string kmCoverage)
+        public PolicyKmCoverage(decimal kmCoverage)
         {
-            if (kmCoverage.Length < 2 || kmCoverage.Length > 50)
+            if (kmCoverage < 0 )
             {
                 throw new InvalidPolicyKmCoverageException();
             }
             this._kmCoverage = kmCoverage;
         }
-        public string GetKmCoverage()
+        public decimal GetKmCoverage()
         {
-            return this._kmCoverage;
+            return this._kmCoverage ;
         }
         public bool Equals(PolicyKmCoverage other)
         {

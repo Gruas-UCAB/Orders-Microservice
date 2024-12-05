@@ -8,6 +8,7 @@ using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.infrastructure.dto;
 using OrdersMicroservice.src.policy.infrastructure.repositories;
 using OrdersMicroservice.src.policy.infrastructure.validators;
+using OrdersMicroservice.src.policyt.infrastructure.validators;
 
 var builder = WebApplication.CreateBuilder(args);
 

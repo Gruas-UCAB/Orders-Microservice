@@ -13,10 +13,10 @@ namespace OrdersMicroservice.src.policy.infrastructure.models
         public required string Name { get; set; }
 
         [BsonElement("monetaryCoverage"), BsonRepresentation(BsonType.String)]
-        public required string MonetaryCoverage { get; set; }
+        public required decimal MonetaryCoverage { get; set; }
 
         [BsonElement("kmCoverage"), BsonRepresentation(BsonType.String)]
-        public required string KmCoverage { get; set; }
+        public required decimal KmCoverage { get; set; }
 
         [BsonElement("createdAt"), BsonRepresentation(BsonType.String)]
         public required DateTime CreatedAt { get; set; }

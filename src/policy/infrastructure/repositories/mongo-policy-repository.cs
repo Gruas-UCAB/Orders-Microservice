@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 using OrdersMicroservice.src.policy.application.repositories;
-using OrdersMicroservice.src.policy.domain;
+using OrdersMicroservice.src.extracost.domain;
 
 using OrdersMicroservice.core.Common;
 using OrdersMicroservice.core.Infrastructure;
@@ -13,6 +13,7 @@ using OrdersMicroservice.src.policy.application.repositories.exceptions;
 
 using OrdersMicroservice.src.policy.domain.value_objects;
 using OrdersMicroservice.src.policy.infrastructure.models;
+using OrdersMicroservice.src.policy.domain;
 
 namespace OrdersMicroservice.src.policy.infrastructure.repositories
 {
@@ -67,8 +68,8 @@ namespace OrdersMicroservice.src.policy.infrastructure.repositories
             var policyList = policies.Select(policy => Policy.Create(
                 new PolicyId(policy["_id"].AsString),
                 new PolicyName(policy["name"].AsString),
-                new PolicyMonetaryCoverage(policy["monetaryCoverage"].AsString),
-                new PolicyKmCoverage(policy["kmCoverage"].AsString)
+                new PolicyMonetaryCoverage(policy["monetaryCoverage"].AsDecimal),
+                new PolicyKmCoverage(policy["kmCoverage"].AsDecimal)
 
             )).ToList();
 
@@ -95,8 +96,8 @@ namespace OrdersMicroservice.src.policy.infrastructure.repositories
                 var policy = Policy.Create(
                     new PolicyId(bsonUser["_id"].AsString),
                     new PolicyName(bsonUser["name"].AsString),
-                    new PolicyMonetaryCoverage(bsonUser["monetaryCoverage"].AsString),
-                    new PolicyKmCoverage(bsonUser["kmCoverage"].AsString)
+                    new PolicyMonetaryCoverage(bsonUser["monetaryCoverage"].AsDecimal),
+                    new PolicyKmCoverage(bsonUser["kmCoverage"].AsDecimal)
  
                 );
 

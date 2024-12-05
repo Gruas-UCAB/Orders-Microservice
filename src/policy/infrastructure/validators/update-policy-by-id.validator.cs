@@ -2,7 +2,7 @@
 using OrdersMicroservice.src.policy.application.commands.update_policy.types;
 using OrdersMicroservice.src.policy.infrastructure.dto;
 
-namespace OrdersMicroservice.src.policy.infrastructure.validators
+namespace OrdersMicroservice.src.policyt.infrastructure.validators
 {
     public class UpdatePolicyByIdValidator : AbstractValidator<UpdatePolicyDto>
     {
@@ -16,10 +16,10 @@ namespace OrdersMicroservice.src.policy.infrastructure.validators
                 .WithMessage("Name must not exceed 50 characters");
 
             RuleFor(x => x.MonetaryCoverage)
-                .MinimumLength(10)
-                .WithMessage("MonetaryCoverage must not be less than 10 characters")
-                .MaximumLength(15)
-                .WithMessage("MonetaryCoverage must not exceed 15 characters");
+                .NotNull()
+                .WithMessage("MonetaryCoverage must not be null")
+                .GreaterThan(0)
+                .WithMessage("MonetaryCoverage must not be posite number");
         }
     }
 }

@@ -8,17 +8,17 @@ namespace OrdersMicroservice.src.policy.domain.events
         public PolicykmCoverageUpdatedEvent(string dispatcherId, string name, PolicykmCoverageUpdated context) : base(dispatcherId, name, context) { }
     }
 
-    public class PolicykmCoverageUpdated(string kmCoverage)
+    public class PolicykmCoverageUpdated(decimal kmCoverage)
     {
-        public string KmCoverage = kmCoverage;
-        static public PolicykmCoverageUpdatedEvent CreateEvent(PolicyId dispatcherId, PolicyKmCoverage monetaryCoverage)
+        public decimal KmCoverage = kmCoverage;
+        static public PolicykmCoverageUpdatedEvent CreateEvent(PolicyId dispatcherId, PolicyKmCoverage kmCoverage)
         {
             Console.WriteLine("No aplico");
             return new PolicykmCoverageUpdatedEvent(
                 dispatcherId.GetId(),
                 typeof(PolicykmCoverageUpdated).Name,
                 new PolicykmCoverageUpdated(
-                    monetaryCoverage.GetKmCoverage()
+                    kmCoverage.GetKmCoverage()
                 )
             );
         }
