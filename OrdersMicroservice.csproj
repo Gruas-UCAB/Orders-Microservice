@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="src\ensuredVehicle\**" />
+    <Content Remove="src\ensuredVehicle\**" />
+    <EmbeddedResource Remove="src\ensuredVehicle\**" />
+    <None Remove="src\ensuredVehicle\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
@@ -22,9 +29,6 @@
   <ItemGroup>
     <Folder Include="core\Infrastructure\" />
     <Folder Include="src\contract\infrastructure\" />
-    <Folder Include="src\ensuredVehicle\application\" />
-    <Folder Include="src\ensuredVehicle\domain\" />
-    <Folder Include="src\ensuredVehicle\infrastructure\" />
     <Folder Include="src\policy\application\" />
     <Folder Include="src\policy\domain\" />
     <Folder Include="src\policy\infrastructure\" />
