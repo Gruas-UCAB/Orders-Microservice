@@ -8,9 +8,9 @@ namespace OrdersMicroservice.src.policy.domain.events
         public PolicyMonetaryCoverageUpdatedEvent(string dispatcherId, string name, PolicyMonetaryCoverageUpdated context) : base(dispatcherId, name, context) { }
     }
 
-    public class PolicyMonetaryCoverageUpdated(string monetaryCoverage)
+    public class PolicyMonetaryCoverageUpdated(decimal monetaryCoverage)
     {
-        public string MonetaryCoverage = monetaryCoverage;
+        public decimal MonetaryCoverage = monetaryCoverage;
         static public PolicyMonetaryCoverageUpdatedEvent CreateEvent(PolicyId dispatcherId, PolicyMonetaryCoverage monetaryCoverage)
         {
             Console.WriteLine("No aplico");

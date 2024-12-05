@@ -2,9 +2,11 @@
 using OrdersMicroservice.core.Application;
 using OrdersMicroservice.Core.Application;
 using OrdersMicroservice.Core.Common;
-using OrdersMicroservice.src.policy.application.commands.update_policy.types;
+
 using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.application.repositories.exceptions;
+using OrdersMicroservice.src.policy.application.commands.update_policy.types;
+
 
 namespace OrdersMicroservice.src.policy.application.commands.update_user
 {

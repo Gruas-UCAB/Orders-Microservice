@@ -2,13 +2,13 @@
 using OrdersMicroservice.core.Application;
 using OrdersMicroservice.Core.Application;
 using OrdersMicroservice.Core.Common;
-
 using OrdersMicroservice.src.policy.application.commands.create_policy.types;
 using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.domain;
 using OrdersMicroservice.src.policy.domain.value_objects;
 
-namespace OrdersMicroservice.src.policy.application.commands.create_user
+
+namespace OrdersMicroservice.src.policy.application.commands.create_policy
 {
     public class CreatePolicyCommandHandler(IIdGenerator<string> idGenerator, IPolicyRepository policyRepository) : IApplicationService<CreatePolicyCommand, CreatePolicyResponse>
     {

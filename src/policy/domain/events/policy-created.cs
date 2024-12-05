@@ -7,11 +7,11 @@ namespace OrdersMicroservice.src.policy.domain.events
         public PolicyCreatedEvent(string dispatcherId, string name, PolicyCreated context) : base(dispatcherId, name, context){ }
     }
 
-    public class PolicyCreated(string name, string monetaryCoverage, string kmCoverage)
+    public class PolicyCreated(string name, decimal monetaryCoverage, decimal kmCoverage)
     {
         public string Name = name;
-        public string MonetaryCoverage = monetaryCoverage;
-        public string KmCoverage = kmCoverage;
+        public decimal MonetaryCoverage = monetaryCoverage;
+        public decimal KmCoverage = kmCoverage;
         
         static public PolicyCreatedEvent CreateEvent(PolicyId dispatcherId, PolicyName name, PolicyMonetaryCoverage monetaryCoverage, PolicyKmCoverage kmCoverage)
         {

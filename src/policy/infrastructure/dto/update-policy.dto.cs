@@ -3,7 +3,7 @@
     public record UpdatePolicyDto
     (
         string? Name,
-        string? MonetaryCoverage,
-        string? KmCoverage
+        decimal? MonetaryCoverage,
+        decimal? KmCoverage
     );
 }
