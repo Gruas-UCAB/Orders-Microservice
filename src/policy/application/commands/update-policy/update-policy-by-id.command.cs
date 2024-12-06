@@ -29,6 +29,18 @@ namespace OrdersMicroservice.src.policy.application.commands.update_user
                     policyToUpdate.UpdateName(new domain.value_objects.PolicyName(data.Name));
                     Console.WriteLine("Cambio nombre");
                 }
+
+                if (data.KmCoverage != null)
+                {
+                    policyToUpdate.UpdateKmCoverage(new domain.value_objects.PolicyKmCoverage(data.KmCoverage));
+                    Console.WriteLine("Cambio KM");
+                }
+
+                if (data.MonetaryCoverage != null)
+                {
+                    policyToUpdate.UpdateMonetaryCoverage(new domain.value_objects.PolicyMonetaryCoverage(data.MonetaryCoverage));
+                    Console.WriteLine("Cambio MO");
+                }
                 ///los otros update
 
                 await _policyRepository.UpdatePolicyById(data);

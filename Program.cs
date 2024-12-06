@@ -2,7 +2,11 @@ using DotNetEnv;
 using FluentValidation;
 
 using OrdersMicroservice.core.Infrastructure;
-
+using OrdersMicroservice.src.extracost.application.commands.create_extracost.types;
+using OrdersMicroservice.src.extracost.application.repositories;
+using OrdersMicroservice.src.extracost.infrastructure.dto;
+using OrdersMicroservice.src.extracost.infrastructure.repositories;
+using OrdersMicroservice.src.extracost.infrastructure.validators;
 using OrdersMicroservice.src.policy.application.commands.create_policy.types;
 using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.infrastructure.dto;
@@ -23,6 +27,10 @@ builder.Services.AddSingleton<MongoDBConfig>();
 builder.Services.AddTransient<IValidator<CreatePolicyCommand>, CreatePolicyCommandValidator>();
 builder.Services.AddTransient<IValidator<UpdatePolicyDto>, UpdatePolicyByIdValidator>();
 builder.Services.AddScoped<IPolicyRepository, MongoPolicyRepository>();
+
+builder.Services.AddTransient<IValidator<CreateExtraCostCommand>, CreateExtraCostCommandValidator>();
+builder.Services.AddTransient<IValidator<UpdateExtraCostDto>, UpdateExtraCostByIdValidator>();
+builder.Services.AddScoped<IExtraCostRepository, MongoExtraCostRepository>();
 
 var app = builder.Build();
 

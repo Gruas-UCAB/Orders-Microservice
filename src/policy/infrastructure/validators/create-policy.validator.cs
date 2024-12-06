@@ -19,13 +19,13 @@ namespace OrdersMicroservice.src.policy.infrastructure.validators
                 .NotNull()
                 .WithMessage("MonetaryCoverage must not be null")
                 .GreaterThan(0)
-                .WithMessage("MonetaryCoverage must not be posite number");
+                .WithMessage("MonetaryCoverage must  be posite number");
 
             RuleFor(x => x.KmCoverage)
                 .NotNull()
                 .WithMessage("KmCoverage must not be null")
                 .GreaterThan(0)
-                .WithMessage("KmCoverage must not be posite number");
+                .WithMessage("KmCoverage must  be posite number");
 
 
         }

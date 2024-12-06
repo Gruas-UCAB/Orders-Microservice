@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
+    "Method": "CreateUser",
+    "RelativePath": "api/extraCost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "OrdersMicroservice.src.extracost.application.commands.create_extracost.types.CreateExtraCostCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
+    "Method": "GetAllExtraCosts",
+    "RelativePath": "api/extraCost",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
+    "Method": "GetExtraCostById",
+    "RelativePath": "api/extraCost/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
+    "Method": "ToggleActivityExtraCostById",
+    "RelativePath": "api/extraCost/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
+    "Method": "UpdateExtraCostById",
+    "RelativePath": "api/extraCost/update/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "OrdersMicroservice.src.extracost.infrastructure.dto.UpdateExtraCostDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
     "Method": "CreateUser",
     "RelativePath": "api/policy",
