@@ -4,7 +4,7 @@ using OrdersMicroservice.src.extracost.application.commands.update_extracost.typ
 using OrdersMicroservice.src.extracost.application.repositories.dto;
 using OrdersMicroservice.src.extracost.domain;
 using OrdersMicroservice.src.extracost.domain.value_objects;
-/*using OrdersMicroservice.src.extracost.infrastructure.dto;*/
+using OrdersMicroservice.src.extracost.infrastructure.dto;
 
 
 namespace OrdersMicroservice.src.extracost.application.repositories
