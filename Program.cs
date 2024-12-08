@@ -13,6 +13,11 @@ using OrdersMicroservice.src.policy.infrastructure.dto;
 using OrdersMicroservice.src.policy.infrastructure.repositories;
 using OrdersMicroservice.src.policy.infrastructure.validators;
 using OrdersMicroservice.src.policyt.infrastructure.validators;
+using OrdersMicroservice.src.vehicle.application.commands.create_vehicle.types;
+using OrdersMicroservice.src.vehicle.application.repositories;
+using OrdersMicroservice.src.vehicle.infrastructure.repositories;
+using OrdersMicroservice.src.vehicle.infrastructure.validators;
+using UsersMicroservice.core.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +36,11 @@ builder.Services.AddScoped<IPolicyRepository, MongoPolicyRepository>();
 builder.Services.AddTransient<IValidator<CreateExtraCostCommand>, CreateExtraCostCommandValidator>();
 builder.Services.AddTransient<IValidator<UpdateExtraCostDto>, UpdateExtraCostByIdValidator>();
 builder.Services.AddScoped<IExtraCostRepository, MongoExtraCostRepository>();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllers();
+builder.Services.AddSingleton<MongoDBConfig>();
+builder.Services.AddTransient<IValidator<CreateVehicleCommand>, CreateVehicleCommandValidator>();
+builder.Services.AddScoped<IVehicleRepository, MongoVehicleRepository>();
 
 var app = builder.Build();
 
