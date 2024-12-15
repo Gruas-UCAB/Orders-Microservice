@@ -19,13 +19,13 @@ public class ContractId : IValueObject<ContractId>
         }
     }
 
-    public string GetId()
+    public string GetContractId()
     {
         return _id;
     }
 
     public bool Equals(ContractId other)
     {
-        return _id == other.GetId();
+        return _id == other.GetContractId();
     }
 }

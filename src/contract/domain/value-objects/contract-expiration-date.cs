@@ -1,27 +1,26 @@
-﻿/*
+﻿
 
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.exceptions;
 
 namespace OrdersMicroservice.src.contract.domain.value_objects;
-public class   PolicyContract : IValueObject<PolicyContract >
+public class   ContractExpitionDate : IValueObject<ContractExpitionDate >
 {
-    private readonly Vehicle _vehicleContract;
-    public NumberContract(decimal numberContract)
+    private readonly DateTime _expirationDate;
+    public ContractExpitionDate(DateTime expirationDate)
         {
-            if (vehicleContract < 0 )
+            if (expirationDate > DateTime.Now) 
             {
-                throw new InvalidNumberContractException();
+                throw new InvalidExpirationDateException();
             }
-            this._vehicleContract = vehicleContract;
+            this._expirationDate = expirationDate;
         }
-        public decimal GetVehicleContract()
+        public DateTime GetExpirationDateContract()
         {
-            return this._vehicleContract ;
+            return this._expirationDate ;
         }
-        public bool Equals(VehicleContract other)
+        public bool Equals(ContractExpitionDate other)
         {
-            return _vehicleContract == other.GetVehicleContract();
+            return _expirationDate == other.GetExpirationDateContract();
         }
 }
-*/

@@ -1,6 +1,7 @@
-﻿/*
+﻿
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
+using OrdersMicroservice.src.policy.domain.value_objects;
 
 namespace OrdersMicroservice.src.contract.domain.events
 {
@@ -9,21 +10,33 @@ namespace OrdersMicroservice.src.contract.domain.events
         public ContractCreatedEvent(string dispatcherId, string name, ContractCreated context) : base(dispatcherId, name, context){ }
     }
 
-    public class ContractCreated(string contractNumber)
+    public class ContractCreated(decimal numberContract , DateTime expirationDate ,string VehicleId , string Policy) 
     {
-        public string ContractNumber = contractNumber;
-        static public ContractCreatedEvent CreateEvent(ContractId dispatcherId, ContractNumber contractNumber)
+        public decimal NumberContract = numberContract;
+
+        public DateTime ExpirationDate = expirationDate;
+
+        public string VehicleId = VehicleId;
+
+        public string  PolicyId = Policy;
+
+
+        static public ContractCreatedEvent CreateEvent(ContractId dispatcherId, NumberContract numberContract, ContractExpitionDate expirationDate , VehicleId vehicleId , PolicyId policyId)
         {
             return new ContractCreatedEvent(
-                dispatcherId.GetId(),
-                typeof(ContractCreated).contractNumber,
+                dispatcherId.GetContractId(),
+                typeof(ContractCreated).Name,
                 new ContractCreated(
-                    name.GetName()
+                    numberContract.GetNumberContract(),
+                    expirationDate.GetExpirationDateContract(),
+                    vehicleId.GetVehicleId(),// tener vehicle
+                    policyId.GetId()
+
+
                 )
             );
         }
     }
 }
 
-*/
 
