@@ -1,53 +1,55 @@
-﻿/*
+﻿
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.events;
 using OrdersMicroservice.src.contract.domain.exceptions;
 using OrdersMicroservice.src.contract.domain.value_objects;
-using System.Xml.Linq;
+using OrdersMicroservice.src.policy.domain.value_objects;
 
 
 namespace OrdersMicroservice.src.contract.domain
 {
     public class Contract(ContractId  id): AggregateRoot<ContractId>(id)
     {
-        private ContractId _id = id;
-        private string _ContractNumber ;
-        private VehicleId _EnsuredVehicleId ; //definir
-        private PolicyId _Policy ;//definir
-        private DateTime _ContractExpirationDate ;
-        private  bool _IsActive = true;
+
+        private NumberContract _contractNumber ;
+      
+        private ContractExpitionDate _contractExpirationDate ;
+        private  bool _isActive = true;
+        private Vehicle _vehicleId;
+
+        private PolicyId _policyId;
 
         protected override void ValidateState()
         {
-            if (_ContractNumber == null  || _EnsuredVehicleId == null || _Policy == null   )
+            if (_contractNumber == null   || _contractExpirationDate == null || _vehicleId == null || _policyId == null) 
             {
                 throw new InvalidContractException();
             }
         }
 
-        public string GetId()
+        public string GetContractId()
         {
-            return _id.GetId();
+            return _id.GetContractId();
         }
-        public string GetContractNumber()
+        public decimal GetContractNumber()
         {
-            return _ContractNumber;
+            return _contractNumber.GetNumberContract();
         }
 
-        public string GetEnsuredVehicleId()
+        public string GetVehicleId()
         {
-            return _EnsuredVehicleId;
+            return _VehicleId.GetId();// tener vehicle
         }
 
         public string GetPolicyId()
         {
-            return _Policy;
+            return _policyId.GetId();
         }
 
 
         public DateTime GetContractExpirationDate()
         {
-            return _ContractExpirationDate;
+            return _contractExpirationDate.GetExpirationDateContract();
         }
 
         public bool IsActive()
@@ -61,43 +63,43 @@ namespace OrdersMicroservice.src.contract.domain
         }
 
      
-        public static Contract Create(UserId id, UserName name, UserPhone phone, UserRole role, DepartmentId department)
+        public static Contract Create(ContractId id, NumberContract numberContract, ContractExpitionDate expirationDate, VehicleId vehicle, PolicyId policy) 
         {
-            User user = new(id);
-            user.Apply(UserCreated.CreateEvent(id, name, phone, role, department));
-            return user;
+            Contract contract = new(id);
+            contract.Apply(ContractCreated.CreateEvent(id, numberContract, expirationDate, vehicle, policy));
+            return contract;
+           
         }
 
-        public void UpdateName(UserName name)
+        public void UpdateNumberContract(NumberContract numberContract)
         {
-            Apply(UserNameUpdated.CreateEvent(_id, name));
+            Apply(NumberContractUpdated.CreateEvent(_id, numberContract));
             Console.WriteLine("Ya aplico");
         }
 
-        public void UpdatePhone(UserPhone phone)
+        public void UpdateExpirationDate(ContractExpitionDate expirationDate)
         {
-            Apply(UserPhoneUpdated.CreateEvent(_id, phone));
+            Apply(ExpirationDateUpdated.CreateEvent(_id, expirationDate));
         }
 
-        private void OnUserCreatedEvent(UserCreated Event)
+        private void OnUserCreatedEvent(ContractCreated Event)
         {
-            _name = new UserName(Event.Name);
-            _phone = new UserPhone(Event.Phone);
-            _role = new UserRole(Event.Role);
-            _department = new DepartmentId(Event.Department);
+            _contractNumber = new NumberContract(Event.NumberContract);
+            _contractExpirationDate = new ContractExpitionDate(Event.ExpirationDate);
+            _vehicleId = new VehicleId(Event.VehicleId);
+            _policyId = new PolicyId(Event.PolicyId);
         }
 
-        private void OnUserNameUpdatedEvent(UserNameUpdated Event)
+        private void OnContractNumberUpdatedEvent(NumberContractUpdatedEvent Event)
         {
             Console.WriteLine("Ya reacciono");
-            _name = new UserName(Event.Name);
+             _contractNumber = new NumberContract(Event.NumberContract);//ver aqui esta raro
         }
 
-        private void OnUserPhoneUpdatedEvent(UserPhoneUpdated Event)
+        private void OnContractExpirationDateUpdatedEvent(ExpirationDateUpdated Event)
         {
-            _phone = new UserPhone(Event.Phone);
+            _contractExpirationDate = new ContractExpitionDate(Event.ExpirationDate);
         }
 
     }
 }
-*/

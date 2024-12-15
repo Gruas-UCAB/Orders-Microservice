@@ -1,7 +1,9 @@
-﻿namespace OrdersMicroservice.src.contract.application.commands.create_department.types
+﻿namespace OrdersMicroservice.src.contract.application.commands.create_contract.types
 {
-    public record CreateContractCommand
-        (
-        string ContractNumber
+    public record CreateContractCommand(
+        decimal ContractNumber,
+        DateTime ContractExpirationDate,
+        string PolicyId,
+        string VehicleId
         );
 }
