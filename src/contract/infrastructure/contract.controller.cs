@@ -16,7 +16,7 @@ using UsersMicroservice.src.contract.application.repositories.dto;
 
 using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.infrastructure.repositories;
-using OrdersMicroservice.src.contract.domain.value_objects;
+
 using UsersMicroservice.src.contract.application.commands.update_contract.types;
 using UsersMicroservice.src.contract.infrastructure.validators;
 using contractsMicroservice.src.contract.infrastructure.repositories;
@@ -31,6 +31,7 @@ namespace OrdersMicroservice.src.contract.infrastructure
         private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
 
         private readonly IVehicleRepository _vehicleRepository = new MongoVehicleRepository();//vehicle
+
         private readonly IIdGenerator<string> _idGenerator = new UUIDGenerator();
 
         [HttpPost]
