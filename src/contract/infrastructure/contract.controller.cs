@@ -30,7 +30,7 @@ namespace OrdersMicroservice.src.contract.infrastructure
         private readonly IContractRepository _contractRepository = new MongocontractRepository();
         private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
 
-        private readonly IVehicleRepository _vehicleRepository = new MongoVehicleRepository();
+        private readonly IVehicleRepository _vehicleRepository = new MongoVehicleRepository();//vehicle
         private readonly IIdGenerator<string> _idGenerator = new UUIDGenerator();
 
         [HttpPost]
