@@ -1,4 +1,4 @@
-﻿
+
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
 using OrdersMicroservice.src.policy.domain.value_objects;

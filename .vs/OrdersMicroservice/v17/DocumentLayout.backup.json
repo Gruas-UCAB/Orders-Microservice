@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\validators\\create-contract.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\dto\\update-contract.dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +39,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "create-contract.validator.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
+              "RelativeDocumentMoniker": "src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
+              "RelativeToolTip": "src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T18:17:51.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "update-contract.dto.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
+              "RelativeDocumentMoniker": "src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
+              "RelativeToolTip": "src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T18:17:09.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mongo-contract-repository.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
+              "RelativeDocumentMoniker": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
+              "RelativeToolTip": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwFEAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T18:20:01.807Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,4 +1,4 @@
-﻿namespace OrdersMicroservice.src.contract.application.commands.create_contract.types
+namespace OrdersMicroservice.src.contract.application.commands.create_contract.types
 {
     public class CreateContractResponse(string id)
     {
