@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iFD2sFzHm2I=",
+  "dgSpecHash": "4eOCX7gpPVE=",
   "success": true,
   "projectFilePath": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\OrdersMicroservice.csproj",
   "expectedPackageFiles": [
@@ -17,8 +17,8 @@
     "C:\\Users\\ANTONIO\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\ANTONIO\\.nuget\\packages\\mongodb.bson\\3.0.0\\mongodb.bson.3.0.0.nupkg.sha512",
-    "C:\\Users\\ANTONIO\\.nuget\\packages\\mongodb.driver\\3.0.0\\mongodb.driver.3.0.0.nupkg.sha512",
+    "C:\\Users\\ANTONIO\\.nuget\\packages\\mongodb.bson\\3.1.0\\mongodb.bson.3.1.0.nupkg.sha512",
+    "C:\\Users\\ANTONIO\\.nuget\\packages\\mongodb.driver\\3.1.0\\mongodb.driver.3.1.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -40,7 +40,6 @@
     "C:\\Users\\ANTONIO\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\sprache\\2.3.1\\sprache.2.3.1.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.1.0\\swashbuckle.aspnetcore.swagger.7.1.0.nupkg.sha512",
-    "C:\\Users\\ANTONIO\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.1.0\\swashbuckle.aspnetcore.swaggergen.7.1.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\ANTONIO\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

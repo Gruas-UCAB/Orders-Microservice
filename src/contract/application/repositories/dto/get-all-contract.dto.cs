@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.src.contract.application.repositories.dto
+﻿namespace OrdersMicroservice.src.contract.application.repositories.dto
 {
     public record GetAllContractsDto
     (

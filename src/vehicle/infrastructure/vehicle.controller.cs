@@ -5,8 +5,8 @@ using OrdersMicroservice.src.vehicle.application.repositories;
 using OrdersMicroservice.src.vehicle.application.repositories.exceptions;
 using OrdersMicroservice.src.vehicle.infrastructure.repositories;
 using OrdersMicroservice.src.vehicle.infrastructure.validators;
-using UsersMicroservice.core.Application;
-using UsersMicroservice.core.Infrastructure;
+using OrdersMicroservice.core.Application;
+using OrdersMicroservice.core.Infrastructure;
 
 
 namespace OrdersMicroservice.src.vehicle.infrastructure
