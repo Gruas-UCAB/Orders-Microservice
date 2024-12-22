@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.src.contract.application.commands.update_contract.types
+﻿namespace OrdersMicroservice.src.contract.application.commands.update_contract.types
 {
     public class UpdateContractByIdCommand(string Id, decimal NumberContract, DateTime ContractExpirationDate )
     {

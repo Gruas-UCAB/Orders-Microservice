@@ -1,7 +1,12 @@
+using contractsMicroservice.src.contract.infrastructure.repositories;
 using DotNetEnv;
 using FluentValidation;
 
 using OrdersMicroservice.core.Infrastructure;
+using OrdersMicroservice.src.contract.application.commands.create_contract.types;
+using OrdersMicroservice.src.contract.application.repositories;
+using OrdersMicroservice.src.contract.infrastructure.dto;
+using OrdersMicroservice.src.contract.infrastructure.validators;
 using OrdersMicroservice.src.extracost.application.commands.create_extracost.types;
 using OrdersMicroservice.src.extracost.application.repositories;
 using OrdersMicroservice.src.extracost.infrastructure.dto;
@@ -17,7 +22,7 @@ using OrdersMicroservice.src.vehicle.application.commands.create_vehicle.types;
 using OrdersMicroservice.src.vehicle.application.repositories;
 using OrdersMicroservice.src.vehicle.infrastructure.repositories;
 using OrdersMicroservice.src.vehicle.infrastructure.validators;
-using UsersMicroservice.core.Infrastructure;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,12 +41,16 @@ builder.Services.AddScoped<IPolicyRepository, MongoPolicyRepository>();
 builder.Services.AddTransient<IValidator<CreateExtraCostCommand>, CreateExtraCostCommandValidator>();
 builder.Services.AddTransient<IValidator<UpdateExtraCostDto>, UpdateExtraCostByIdValidator>();
 builder.Services.AddScoped<IExtraCostRepository, MongoExtraCostRepository>();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddControllers();
-builder.Services.AddSingleton<MongoDBConfig>();
+
 builder.Services.AddTransient<IValidator<CreateVehicleCommand>, CreateVehicleCommandValidator>();
+/*builder.Services.AddTransient<IValidator<UpdateVehicleDto>, UpdateVehicleIdValidator>();*/
 builder.Services.AddScoped<IVehicleRepository, MongoVehicleRepository>();
 
+builder.Services.AddTransient<IValidator<CreateContractCommand>, CreateContractCommandValidator>();
+builder.Services.AddTransient<IValidator<UpdateContractDto>, UpdateContractByIdValidator>();
+builder.Services.AddScoped<IContractRepository, MongoContractRepository>();
+
+builder.Services.AddControllers();
 var app = builder.Build();
 
 app.UseHttpsRedirection();

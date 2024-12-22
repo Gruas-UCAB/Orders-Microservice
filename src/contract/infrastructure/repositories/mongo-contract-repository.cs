@@ -11,17 +11,18 @@ using OrdersMicroservice.src.contract.domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
 using OrdersMicroservice.src.contract.infrastructure.models;
 using OrdersMicroservice.src.policy.domain.value_objects;
-using UsersMicroservice.src.contract.application.commands.update_contract.types;
-using UsersMicroservice.src.contract.application.repositories.dto;
+using OrdersMicroservice.src.vehicle.domain.value_objects;
+
+
 
 namespace contractsMicroservice.src.contract.infrastructure.repositories
 {
-    public class MongocontractRepository : IContractRepository
+    public class MongoContractRepository : IContractRepository
     {
         internal MongoDBConfig _config = new();
         private readonly IMongoCollection<BsonDocument> contractCollection;
 
-        public MongocontractRepository()
+        public MongoContractRepository()
         {
             contractCollection = _config.db.GetCollection<BsonDocument>("contracts");
         }
@@ -33,9 +34,10 @@ namespace contractsMicroservice.src.contract.infrastructure.repositories
                 Id = contract.GetContractId(),
                 NumberContract = contract.GetContractNumber(),
                 ExpirationDate = contract.GetContractExpirationDate(),
+                
 
-                Vehicle = contract.GetVehicleId(),
-                poliza = contract.GetPolicyId(),
+                VehicleId = contract.GetVehicleId(),
+                PolizaId = contract.GetPolicyId(),
                 IsActive = true,
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now,
@@ -45,20 +47,21 @@ namespace contractsMicroservice.src.contract.infrastructure.repositories
             {
                 {"_id", mongoContract.Id},
                 {"numberContract", mongoContract.NumberContract},
-                {"expirationDate", mongoContract.ExpirationDate}, 
-
+                {"expirationDate", mongoContract.ExpirationDate},
+                {"vehicleId", mongoContract.VehicleId},
+                {"polizaId", mongoContract.PolizaId},
                 {"isActive", mongoContract.IsActive},
                 {"createdAt", mongoContract.CreatedAt },
                 {"updatedAt", mongoContract.UpdatedAt }
             };
             await contractCollection.InsertOneAsync(bsonDocument);
 
-            var savedcontract = contract.Create(
+            var savedcontract = Contract.Create(
                 new ContractId(mongoContract.Id), 
                 new NumberContract(mongoContract.NumberContract), 
                 new ContractExpitionDate(mongoContract.ExpirationDate), 
-                new VehicleId(mongoContract.Vehicle),
-                new PolicyId(mongoContract.poliza)
+                new VehicleId(mongoContract.VehicleId),
+                new PolicyId(mongoContract.PolizaId)
                 );
                
 
@@ -68,20 +71,20 @@ namespace contractsMicroservice.src.contract.infrastructure.repositories
         {
             var filter = Builders<BsonDocument>.Filter.Eq("isActive", data.active);
             var contracts = await contractCollection.Find(filter).Limit(data.limit).Skip(data.limit * (data.offset - 1)).ToListAsync();
-
+          
             var contractList = new List<Contract>();
 
-            foreach (var bsoncontract in contracts)
+            foreach (var bsonContract in contracts)
             {
                 var contract = Contract.Create(
-                new ContractId(bsoncontract["_id"].AsString),
-                new NumberContract(bsoncontract["numberContract"].AsDecimal),
-                new ContractExpitionDate(bsoncontract["expirationDate"].AsBsonDateTime.ToUniversalTime()),
-                new VehicleId(bsoncontract["vehicle"].AsString),
-                new PolicyId(bsoncontract["poliza"].AsString)
+                new ContractId(bsonContract["_id"].AsString),
+                new NumberContract(bsonContract["numberContract"].AsDecimal),
+                new ContractExpitionDate(bsonContract["expirationDate"].AsBsonDateTime.AsLocalTime),
+                new VehicleId(bsonContract["vehicleId"].AsString),
+                new PolicyId(bsonContract["polizaId"].AsString)
             );
 
-                if (!bsoncontract["isActive"].AsBoolean)
+                if (!bsonContract["isActive"].AsBoolean)
                 {
                     contract.ChangeStatus();
                 }
@@ -101,22 +104,22 @@ namespace contractsMicroservice.src.contract.infrastructure.repositories
             try
             {
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", id.GetContractId());
-                var bsoncontract = await contractCollection.Find(filter).FirstOrDefaultAsync();
+                var bsonContract = await contractCollection.Find(filter).FirstOrDefaultAsync();
         
-                if (bsoncontract == null)
+                if (bsonContract == null)
                 {
                     return _Optional<Contract>.Empty();
                 }
 
                 var contract = Contract.Create(
-                new ContractId(bsoncontract["_id"].AsString),
-                new NumberContract(bsoncontract["numberContract"].AsDecimal),
-                new ContractExpitionDate(bsoncontract["expirationDate"].AsBsonDateTime.ToUniversalTime()),
-                new VehicleId(bsoncontract["vehicle"].AsString),
-                new PolicyId(bsoncontract["poliza"].AsString)
+                new ContractId(bsonContract["_id"].AsString),
+                new NumberContract(bsonContract["numberContract"].AsDecimal),
+                new ContractExpitionDate(bsonContract["expirationDate"].AsBsonDateTime.AsLocalTime),
+                new VehicleId(bsonContract["vehicleId"].AsString),
+                new PolicyId(bsonContract["polizaId"].AsString)
             );
 
-                if (!bsoncontract["isActive"].AsBoolean)
+                if (!bsonContract["isActive"].AsBoolean)
                 {
                     contract.ChangeStatus();
                 }

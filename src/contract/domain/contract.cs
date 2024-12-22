@@ -5,6 +5,8 @@ using OrdersMicroservice.src.contract.domain.exceptions;
 using OrdersMicroservice.src.contract.domain.value_objects;
 using OrdersMicroservice.src.policy.domain.value_objects;
 
+using OrdersMicroservice.src.vehicle.domain.value_objects;
+
 
 namespace OrdersMicroservice.src.contract.domain
 {
@@ -15,7 +17,7 @@ namespace OrdersMicroservice.src.contract.domain
       
         private ContractExpitionDate _contractExpirationDate ;
         private  bool _isActive = true;
-        private Vehicle _vehicleId;
+        private VehicleId _vehicleId;
 
         private PolicyId _policyId;
 
@@ -38,7 +40,7 @@ namespace OrdersMicroservice.src.contract.domain
 
         public string GetVehicleId()
         {
-            return _VehicleId.GetId();// tener vehicle
+            return _vehicleId.GetId();// tener vehicle
         }
 
         public string GetPolicyId()
@@ -82,7 +84,7 @@ namespace OrdersMicroservice.src.contract.domain
             Apply(ExpirationDateUpdated.CreateEvent(_id, expirationDate));
         }
 
-        private void OnUserCreatedEvent(ContractCreated Event)
+        private void OnContractCreatedEvent(ContractCreated Event)
         {
             _contractNumber = new NumberContract(Event.NumberContract);
             _contractExpirationDate = new ContractExpitionDate(Event.ExpirationDate);

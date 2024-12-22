@@ -2,8 +2,8 @@
 using OrdersMicroservice.core.Common;
 using OrdersMicroservice.src.contract.domain;
 using OrdersMicroservice.src.contract.domain.value_objects;
-using UsersMicroservice.src.contract.application.commands.update_contract.types;
-using UsersMicroservice.src.contract.application.repositories.dto;
+using OrdersMicroservice.src.contract.application.commands.update_contract.types;
+using OrdersMicroservice.src.contract.application.repositories.dto;
 
 namespace OrdersMicroservice.src.contract.application.repositories
 {

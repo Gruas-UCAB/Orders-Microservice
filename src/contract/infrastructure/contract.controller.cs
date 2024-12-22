@@ -12,22 +12,26 @@ using OrdersMicroservice.src.contract.application.repositories.exceptions;
 using OrdersMicroservice.src.contract.infrastructure.dto;
 
 using OrdersMicroservice.src.contract.infrastructure.validators;
-using UsersMicroservice.src.contract.application.repositories.dto;
+
 
 using OrdersMicroservice.src.policy.application.repositories;
 using OrdersMicroservice.src.policy.infrastructure.repositories;
 
-using UsersMicroservice.src.contract.application.commands.update_contract.types;
-using UsersMicroservice.src.contract.infrastructure.validators;
+
+
 using contractsMicroservice.src.contract.infrastructure.repositories;
+using OrdersMicroservice.src.vehicle.application.repositories;
+using OrdersMicroservice.src.vehicle.infrastructure.repositories;
+using OrdersMicroservice.src.contract.application.repositories.dto;
+using OrdersMicroservice.src.contract.application.commands.update_contract.types;
 
 namespace OrdersMicroservice.src.contract.infrastructure
 {
     [Route("api/contract")]
     [ApiController]
-    public class UserController : Controller
+    public class ContractController : Controller
     {
-        private readonly IContractRepository _contractRepository = new MongocontractRepository();
+        private readonly IContractRepository _contractRepository = new MongoContractRepository();
         private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
 
         private readonly IVehicleRepository _vehicleRepository = new MongoVehicleRepository();//vehicle
@@ -57,8 +61,9 @@ namespace OrdersMicroservice.src.contract.infrastructure
         public async Task<IActionResult> GetAllContracts([FromQuery] GetAllContractsDto data)
         {
             var contract = await _contractRepository.GetAllContracts(data);
-            if ( contract.HasValue())
+            if (! contract.HasValue())
             {
+                
                 return NotFound(new { errorMessage = new ContractNotFoundException().Message });
             }
             var contractList = contract.Unwrap().Select(u => new
@@ -66,8 +71,8 @@ namespace OrdersMicroservice.src.contract.infrastructure
                 Id = u.GetContractId(),
                 NumberContract = u.GetContractNumber(),
                 ExpirationDate = u.GetContractExpirationDate(),
-                Vehicle = u.GetVehicleId(),
-                Policy = u.GetPolicyId(),
+                VehicleId = u.GetVehicleId(),
+                PolicyId = u.GetPolicyId(),
                 IsActive = u.IsActive()
             }).ToList();
             return Ok(contractList
