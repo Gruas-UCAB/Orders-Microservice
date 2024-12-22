@@ -2,7 +2,7 @@
 
 using OrdersMicroservice.src.contract.infrastructure.dto;
 
-namespace UsersMicroservice.src.contract.infrastructure.validators
+namespace OrdersMicroservice.src.contract.infrastructure.validators
 {
     public class UpdateContractByIdValidator : AbstractValidator<UpdateContractDto>
     {
@@ -11,13 +11,14 @@ namespace UsersMicroservice.src.contract.infrastructure.validators
 
             RuleFor(x => x.NumberContract)
                 .NotNull()
-                .WithMessage("MonetaryCoverage must not be null")
+                .WithMessage("Contrac number must not be null")
                 .GreaterThan(0)
-                .WithMessage("MonetaryCoverage must  be posite number");
+                .WithMessage("Contrac number must  be posite number");
 
-            RuleFor(x => x.ExpirationDate);
+            RuleFor(x => x.ExpirationDate)
+                .NotNull()
+                .WithMessage("must not be null");
 
- 
         }
     }
 }

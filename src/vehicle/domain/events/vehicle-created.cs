@@ -1,4 +1,4 @@
-﻿using UsersMicroservice.Core.Domain;
+﻿using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.vehicle.domain.value_objects;
 
 namespace OrdersMicroservice.src.vehicle.domain.events

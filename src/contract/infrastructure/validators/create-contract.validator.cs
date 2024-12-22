@@ -8,14 +8,15 @@ namespace OrdersMicroservice.src.contract.infrastructure.validators
         public CreateContractCommandValidator() 
         {
             RuleFor(x => x.ContractNumber)
-                .NotNull()
-                .WithMessage("MonetaryCoverage must not be null")
-                .GreaterThan(0)
-                .WithMessage("MonetaryCoverage must  be posite number");
+            .NotNull()
+            .WithMessage("Contact number must not be null")
+            .GreaterThan(0)
+            .WithMessage("Contract number must  be posite number");
 
 
-            RuleFor(x => x.ContractExpirationDate);
-
+            RuleFor(x => x.ContractExpirationDate)
+            .NotNull()
+            .WithMessage("must not be null");
 
 
             RuleFor(x => x.VehicleId)

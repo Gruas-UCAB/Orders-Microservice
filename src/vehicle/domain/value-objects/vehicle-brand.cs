@@ -1,5 +1,5 @@
 ﻿using OrdersMicroservice.src.vehicle.domain.exceptions;
-using UsersMicroservice.Core.Domain;
+using OrdersMicroservice.Core.Domain;
 
 public class VehicleBrand : IValueObject<VehicleBrand>
 {

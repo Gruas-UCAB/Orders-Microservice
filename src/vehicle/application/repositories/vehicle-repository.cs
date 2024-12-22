@@ -1,6 +1,7 @@
-﻿using UsersMicroservice.core.Common;
+﻿
 using OrdersMicroservice.src.vehicle.domain;
 using OrdersMicroservice.src.vehicle.domain.value_objects;
+using OrdersMicroservice.core.Common;
 
 namespace OrdersMicroservice.src.vehicle.application.repositories
 {

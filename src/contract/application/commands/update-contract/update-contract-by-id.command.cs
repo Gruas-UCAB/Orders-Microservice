@@ -5,8 +5,9 @@ using OrdersMicroservice.Core.Common;
 
 using OrdersMicroservice.src.contract.application.repositories;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
-using UsersMicroservice.src.contract.application.commands.update_contract.types;
-using UsersMicroservice.src.user.application.commands.update_contract.types;
+
+using OrdersMicroservice.src.user.application.commands.update_contract.types;
+using OrdersMicroservice.src.contract.application.commands.update_contract.types;
 
 
 
