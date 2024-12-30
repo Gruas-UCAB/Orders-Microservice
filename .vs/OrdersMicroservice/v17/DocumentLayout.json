@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +35,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -72,7 +76,7 @@
               "RelativeDocumentMoniker": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "RelativeToolTip": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAIwFEAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAwwFEAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T18:20:01.807Z",
               "EditorCaption": ""

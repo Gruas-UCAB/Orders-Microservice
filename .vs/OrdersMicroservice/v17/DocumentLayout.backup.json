@@ -50,8 +50,7 @@
               "RelativeToolTip": "src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T18:17:51.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-21T18:17:51.696Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T18:17:09.589Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-21T18:17:09.589Z"
             },
             {
               "$type": "Document",
@@ -74,7 +72,7 @@
               "RelativeDocumentMoniker": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "RelativeToolTip": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwFEAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAIwFEAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-18T18:20:01.807Z",
               "EditorCaption": ""
