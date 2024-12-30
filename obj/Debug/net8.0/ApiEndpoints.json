@@ -75,7 +75,44 @@
   },
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
-    "Method": "UpdateUserById",
+    "Method": "CreatePolicy",
+    "RelativePath": "api/contract/policy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "OrdersMicroservice.src.contract.application.commands.create_policy.types.CreatePolicyCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "GetPolicyById",
+    "RelativePath": "api/contract/policy/policy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contractId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "policyId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "UpdateContractById",
     "RelativePath": "api/contract/update/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
@@ -95,78 +132,36 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
-    "Method": "CreateUser",
-    "RelativePath": "api/extraCost",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "CreateVehicle",
+    "RelativePath": "api/contract/vehicle",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "command",
-        "Type": "OrdersMicroservice.src.extracost.application.commands.create_extracost.types.CreateExtraCostCommand",
+        "Type": "OrdersMicroservice.src.contract.application.commands.create_vehicle.types.CreateVehicleCommand",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
-    "Method": "GetAllExtraCosts",
-    "RelativePath": "api/extraCost",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
-    "Method": "GetExtraCostById",
-    "RelativePath": "api/extraCost/{id}",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "GetCraneById",
+    "RelativePath": "api/contract/vehicle/vehicle",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "contractId",
         "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
-    "Method": "ToggleActivityExtraCostById",
-    "RelativePath": "api/extraCost/{id}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.extracost.infrastructure.ExtraCostController",
-    "Method": "UpdateExtraCostById",
-    "RelativePath": "api/extraCost/update/{id}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "data",
-        "Type": "OrdersMicroservice.src.extracost.infrastructure.dto.UpdateExtraCostDto",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
-        "Name": "id",
+        "Name": "vehicleId",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -174,8 +169,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
-    "Method": "CreateUser",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
+    "Method": "CreatePolicy",
     "RelativePath": "api/policy",
     "HttpMethod": "POST",
     "IsController": true,
@@ -183,14 +178,14 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "OrdersMicroservice.src.policy.application.commands.create_policy.types.CreatePolicyCommand",
+        "Type": "OrdersMicroservice.src.contract.application.commands.create_policy.types.CreatePolicyCommand",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "GetAllPolicies",
     "RelativePath": "api/policy",
     "HttpMethod": "GET",
@@ -200,7 +195,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "GetPolicyById",
     "RelativePath": "api/policy/{id}",
     "HttpMethod": "GET",
@@ -216,73 +211,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "ToggleActivityPolicyById",
     "RelativePath": "api/policy/{id}",
     "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.policy.infrastructure.PolicyController",
-    "Method": "UpdatePolicyById",
-    "RelativePath": "api/policy/update/{id}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "data",
-        "Type": "OrdersMicroservice.src.policy.infrastructure.dto.UpdatePolicyDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.vehicle.infrastructure.VehicleController",
-    "Method": "CreateVehicle",
-    "RelativePath": "api/vehicle",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "OrdersMicroservice.src.vehicle.application.commands.create_vehicle.types.CreateVehicleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.vehicle.infrastructure.VehicleController",
-    "Method": "GetAllVehicles",
-    "RelativePath": "api/vehicle",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.vehicle.infrastructure.VehicleController",
-    "Method": "GetVehicleById",
-    "RelativePath": "api/vehicle/{id}",
-    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
