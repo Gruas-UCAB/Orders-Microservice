@@ -1,8 +1,9 @@
 
 using OrdersMicroservice.Core.Domain;
+using OrdersMicroservice.src.contract.domain.entities.policy;
+using OrdersMicroservice.src.contract.domain.entities.vehicle;
 using OrdersMicroservice.src.contract.domain.value_objects;
-using OrdersMicroservice.src.policy.domain.value_objects;
-using OrdersMicroservice.src.vehicle.domain.value_objects;
+
 
 namespace OrdersMicroservice.src.contract.domain.events
 {
@@ -11,18 +12,18 @@ namespace OrdersMicroservice.src.contract.domain.events
         public ContractCreatedEvent(string dispatcherId, string name, ContractCreated context) : base(dispatcherId, name, context){ }
     }
 
-    public class ContractCreated(decimal numberContract , DateTime expirationDate ,string vehicleId , string policy) 
+    public class ContractCreated(decimal numberContract , DateTime expirationDate ,Vehicle vehicle /*, Policy policy*/) 
     {
         public decimal NumberContract = numberContract;
 
         public DateTime ExpirationDate = expirationDate;
 
-        public string VehicleId = vehicleId;
+        public  Vehicle  Vehicle = vehicle;
 
-        public string  PolicyId = policy;
+       /* public  Policy Policy = policy;*/
 
 
-        static public ContractCreatedEvent CreateEvent(ContractId dispatcherId, NumberContract numberContract, ContractExpitionDate expirationDate , VehicleId vehicleId , PolicyId policyId)
+        static public ContractCreatedEvent CreateEvent(ContractId dispatcherId, NumberContract numberContract, ContractExpitionDate expirationDate , Vehicle vehicle/*, Policy policy*/)
         {
             return new ContractCreatedEvent(
                 dispatcherId.GetContractId(),
@@ -30,8 +31,8 @@ namespace OrdersMicroservice.src.contract.domain.events
                 new ContractCreated(
                     numberContract.GetNumberContract(),
                     expirationDate.GetExpirationDateContract(),
-                    vehicleId.GetId(),// tener vehicle
-                    policyId.GetId()
+                    vehicle
+                    /*policy*/
 
 
                 )

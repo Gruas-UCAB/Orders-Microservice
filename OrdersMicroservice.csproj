@@ -20,10 +20,12 @@
 
   <ItemGroup>
     <Folder Include="core\Infrastructure\" />
-    <Folder Include="src\contract\infrastructure\" />
-    <Folder Include="src\policy\application\" />
-    <Folder Include="src\policy\domain\" />
-    <Folder Include="src\policy\infrastructure\" />
+    <Folder Include="src\contract\domain\entities\policy\application\repositories\dto\" />
+    <Folder Include="src\contract\domain\entities\policy\application\repositories\exceptions\" />
+    <Folder Include="src\contract\domain\entities\vehicle\application\commands\" />
+    <Folder Include="src\contract\domain\entities\vehicle\application\repositories\exceptions\" />
+    <Folder Include="src\contract\domain\entities\vehicle\domain\events\" />
+    <Folder Include="src\contract\domain\entities\vehicle\infrastructure\validators\" />
   </ItemGroup>
 
 </Project>

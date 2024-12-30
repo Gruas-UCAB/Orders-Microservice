@@ -19,9 +19,9 @@ namespace OrdersMicroservice.src.contract.infrastructure.validators
             .WithMessage("must not be null");
 
 
-            RuleFor(x => x.VehicleId)
+            /*RuleFor(x => x.Vehicle)
                 .NotNull()
-                .WithMessage("must not be null");
+                .WithMessage("must not be null");*/
  
 
 

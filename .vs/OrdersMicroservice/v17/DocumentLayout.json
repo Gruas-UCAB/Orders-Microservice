@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\validators\\create-contract.validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\domain\\events\\vehicle-created.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\domain\\events\\vehicle-created.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\infrastructure\\dto\\update-contract.dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\antonio\\desktop\\proyectodw-grua\\repobackend-order\\src\\contract\\domain\\events\\policy-created.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\contract\\domain\\events\\policy-created.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,35 +38,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "create-contract.validator.cs",
-              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
-              "RelativeDocumentMoniker": "src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
-              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
-              "RelativeToolTip": "src\\contract\\infrastructure\\validators\\create-contract.validator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T18:17:51.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "update-contract.dto.cs",
-              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
-              "RelativeDocumentMoniker": "src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
-              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
-              "RelativeToolTip": "src\\contract\\infrastructure\\dto\\update-contract.dto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T18:17:09.589Z"
             },
             {
               "$type": "Document",
@@ -76,9 +48,35 @@
               "RelativeDocumentMoniker": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
               "RelativeToolTip": "src\\contract\\infrastructure\\repositories\\mongo-contract-repository.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAwwFEAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowFwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T18:20:01.807Z",
+              "WhenOpened": "2024-12-29T21:40:13.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vehicle-created.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\domain\\events\\vehicle-created.cs",
+              "RelativeDocumentMoniker": "src\\contract\\domain\\events\\vehicle-created.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\domain\\events\\vehicle-created.cs",
+              "RelativeToolTip": "src\\contract\\domain\\events\\vehicle-created.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T21:31:28.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "policy-created.cs",
+              "DocumentMoniker": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\domain\\events\\policy-created.cs",
+              "RelativeDocumentMoniker": "src\\contract\\domain\\events\\policy-created.cs",
+              "ToolTip": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order\\src\\contract\\domain\\events\\policy-created.cs",
+              "RelativeToolTip": "src\\contract\\domain\\events\\policy-created.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAqwBUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T21:27:12.548Z",
               "EditorCaption": ""
             }
           ]
