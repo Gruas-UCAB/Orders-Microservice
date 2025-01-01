@@ -15,11 +15,11 @@ public class PolicyMonetaryCoverage : IValueObject<PolicyMonetaryCoverage>
             {
                 throw new InvalidPolicyMonetaryCoverageException();
             }
-            this._monetaryCoverage = monetaryCoverage;
+            _monetaryCoverage = Math.Round(monetaryCoverage, 2); ;
         }
         public decimal GetMonetaryCoverage()
         {
-            return this._monetaryCoverage;
+            return _monetaryCoverage;
         }
         public bool Equals(PolicyMonetaryCoverage other)
         {

@@ -18,10 +18,13 @@ namespace OrdersMicroservice.src.contract.infrastructure.models
         [BsonElement("kmCoverage"), BsonRepresentation(BsonType.String)]
         public required decimal KmCoverage { get; set; }
 
+        [BsonElement("baseKmPrice"), BsonRepresentation(BsonType.String)]
+        public required decimal BaseKmPrice{ get; set; }
+
         [BsonElement("createdAt"), BsonRepresentation(BsonType.String)]
-        public required DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [BsonElement("updatedAt"), BsonRepresentation(BsonType.String)]
-        public required DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

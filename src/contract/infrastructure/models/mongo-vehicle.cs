@@ -25,12 +25,10 @@ namespace OrdersMicroservice.src.contract.infrastructure.models
         public required string Color { get; set; }
 
         [BsonElement("km")]
-        public required double Km { get; set; }
-
-        [BsonElement("createdAt"), BsonRepresentation(BsonType.DateTime)]
-        public required DateTime CreatedAt { get; set; }
-
-        [BsonElement("updateAt"), BsonRepresentation(BsonType.DateTime)]
-        public DateTime UpdatedAt { get; set; }
+        public required int Km { get; set; }
+        [BsonElement("ownerDni")]
+        public required int OwnerDni { get; set; }
+        [BsonElement("ownerName")]
+        public required string OwnerName { get; set; }
     }
 }

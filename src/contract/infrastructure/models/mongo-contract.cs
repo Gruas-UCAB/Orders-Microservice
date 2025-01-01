@@ -13,15 +13,15 @@ namespace OrdersMicroservice.src.contract.infrastructure.models
         public required string Id { get; set; }
 
         [BsonElement("numberContract"), BsonRepresentation(BsonType.String)]
-        public required decimal NumberContract { get; set; }
+        public required int NumberContract { get; set; }
 
         [BsonElement("expirationDate"), BsonRepresentation(BsonType.String)]
         public required DateTime ExpirationDate { get; set; }
 
-        [BsonElement("policy") /*, BsonRepresentation(BsonType.String)*/]
+        [BsonElement("policy")]
         public required Policy Policy { get; set; }
 
-        [BsonElement("vehicle")/*, BsonRepresentation(BsonType.String)*/]
+        [BsonElement("vehicle")]
         public required Vehicle Vehicle { get; set; }
 
         [BsonElement("isActive"), BsonRepresentation(BsonType.Boolean)]

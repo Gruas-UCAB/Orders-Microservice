@@ -1,5 +1,4 @@
 ﻿using OrdersMicroservice.Core.Domain;
-using OrdersMicroservice.src.contract.domain.entities.policy.domain.events;
 using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
 
 namespace OrdersMicroservice.src.contract.domain.entities.policy
@@ -9,23 +8,16 @@ namespace OrdersMicroservice.src.contract.domain.entities.policy
         private PolicyName _name;
         private PolicyMonetaryCoverage _monetaryCoverage;
         private PolicyKmCoverage _kmCoverage;
+        private PolicyBaseKmPrice _baseKmPrice;
 
-        public Policy(PolicyId id, PolicyName name, PolicyMonetaryCoverage monetaryCoverage, PolicyKmCoverage  kmCoverage) : base(id)
+        public Policy(PolicyId id, PolicyName name, PolicyMonetaryCoverage monetaryCoverage, PolicyKmCoverage  kmCoverage, PolicyBaseKmPrice baseKmPrice) : base(id)
         {
             _name = name;
             _monetaryCoverage = monetaryCoverage;
             _kmCoverage = kmCoverage;
+            _baseKmPrice = baseKmPrice;
+        }
 
-        }
-        /*
-        protected override void ValidateState()
-        {
-            if (_name == null || _monetaryCoverage == null || _kmCoverage == null)
-            {
-                throw new InvalidPolicyException();
-            }
-        }
-        */
         public string GetId()
         {
             return _id.GetId();
@@ -47,60 +39,27 @@ namespace OrdersMicroservice.src.contract.domain.entities.policy
             return _kmCoverage.GetKmCoverage();
         }
 
-
-        /*
-        
-        public static Policy Create(PolicyId id, PolicyName name, PolicyMonetaryCoverage monetaryCoverage, PolicyKmCoverage kmCoverage)
+        public decimal GetBaseKmPrice()
         {
-            Policy policy = new(id);
-            policy.Apply(PolicyCreated.CreateEvent(id, name, monetaryCoverage, kmCoverage));
-            return policy;
-
+            return _baseKmPrice.GetPrice();
+        }
+        public void UpdateName(string name)
+        {
+            _name = new PolicyName(name);
+        }
+        public void UpdateMonetaryCoverage(decimal monetaryCoverage)
+        {
+            _monetaryCoverage = new PolicyMonetaryCoverage(monetaryCoverage);
         }
 
-        public void UpdateName(PolicyName name)
+        public void UpdateKmCoverage(decimal kmCoverage)
         {
-            Apply(PolicyNameUpdated.CreateEvent(_id, name));
-            Console.WriteLine("Ya aplico");
+            _kmCoverage = new PolicyKmCoverage(kmCoverage);
         }
 
-        public void UpdateMonetaryCoverage(PolicyMonetaryCoverage monetaryCoverage)
+        public void UpdateBaseKmPrice(decimal baseKmPrice)
         {
-            Apply(PolicyMonetaryCoverageUpdated.CreateEvent(_id, monetaryCoverage));
-            Console.WriteLine("Ya aplico");
+            _baseKmPrice = new PolicyBaseKmPrice(baseKmPrice);
         }
-
-        public void UpdateKmCoverage(PolicyKmCoverage kmCoverage)
-        {
-            Apply(PolicykmCoverageUpdated.CreateEvent(_id, kmCoverage));
-            Console.WriteLine("Ya aplico");
-        }
-
-        private void OnPolicyCreatedEvent(PolicyCreated Event)
-        {
-            _name = new PolicyName(Event.Name);
-            _monetaryCoverage = new PolicyMonetaryCoverage(Event.MonetaryCoverage);
-            _kmCoverage = new PolicyKmCoverage(Event.KmCoverage);
-
-        }
-
-        private void OnPolicyNameUpdatedEvent(PolicyNameUpdated Event)
-        {
-            Console.WriteLine("Ya reacciono");
-            _name = new PolicyName(Event.Name);
-        }
-
-        private void OnPolicyMonetaryCoverageUpdatedEvent(PolicyMonetaryCoverageUpdated Event)
-        {
-            Console.WriteLine("Ya reacciono");
-            _monetaryCoverage = new PolicyMonetaryCoverage(Event.MonetaryCoverage);
-        }
-
-        private void OnPolicykmCoverageUpdatedEvent(PolicykmCoverageUpdated Event)
-        {
-            Console.WriteLine("Ya reacciono");
-            _kmCoverage = new PolicyKmCoverage(Event.KmCoverage);
-        }
-     */ 
     }
 }

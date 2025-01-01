@@ -1,31 +1,30 @@
-﻿using contractsMicroservice.src.contract.infrastructure.repositories;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OrdersMicroservice.core.Application;
 using OrdersMicroservice.core.Infrastructure;
 using OrdersMicroservice.src.contract.application.commands.create_policy.types;
 using OrdersMicroservice.src.contract.application.repositories;
+using OrdersMicroservice.src.contract.application.repositories.dto;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
 
 using OrdersMicroservice.src.contract.infrastructure.repositories;
 using OrdersMicroservice.src.contract.infrastructure.validators;
 using OrdersMicroservice.src.policy.application.commands.create_policy;
-
-
-
-
+using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
+using OrdersMicroservice.src.contract.infrastructure.dto;
+using OrdersMicroservice.src.contract.application.commands.update_contract.exceptions;
+using OrdersMicroservice.src.contract.application.commands.update_contract;
+using OrdersMicroservice.src.contract.application.commands.update_contract.types;
 
 
 namespace OrdersMicroservice.src.contract.infrastructure
 {
-    [Route("api/policy")]
+    [Route("policy")]
     [ApiController]
     public class PolicyController : Controller
     {
         private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
 
         private readonly IIdGenerator<string> _idGenerator = new UUIDGenerator();
-
-        private readonly IContractRepository _contractRepository = new MongoContractRepository();
 
         [HttpPost]
         public async Task<IActionResult> CreatePolicy(CreatePolicyCommand command)
@@ -36,7 +35,7 @@ namespace OrdersMicroservice.src.contract.infrastructure
                 var errorMessages = validator.Validate(command).Errors.Select(e => e.ErrorMessage).ToList();
                 return BadRequest(new { errors = errorMessages });
             }
-            var service = new CreatePolicyCommandHandler(_idGenerator, _contractRepository);
+            var service = new CreatePolicyCommandHandler(_idGenerator, _policyRepository);
             var response = await service.Execute(command);
             if (response.IsFailure)
             {
@@ -47,23 +46,24 @@ namespace OrdersMicroservice.src.contract.infrastructure
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllPolicies()
+        public async Task<IActionResult> GetAllPolicies([FromQuery]GetAllPolicesDto data)
         {
-            var policies = await _policyRepository.GetAllPolicies();
+            var policies = await _policyRepository.GetAllPolicies(data);
 
             if (!policies.HasValue())
             {
                 return NotFound(
-                    new { errorMessage = new PolicyNotFoundException().Message }
+                    new { errorMessage = new NoPoliciesFoundException().Message }
                     );
             }
 
-            var policyList = policies.Unwrap().Select(d => new
+            var policyList = policies.Unwrap().Select(p => new
             {
-                Id = d.GetId(),
-                Name = d.GetName(),
-                MonetaryCoverage = d.GetMonetaryCoverage(),
-                kmCoverage = d.GetkmCoverage()
+                Id = p.GetId(),
+                Name = p.GetName(),
+                MonetaryCoverage = p.GetMonetaryCoverage(),
+                kmCoverage = p.GetkmCoverage(),
+                baseKmPrice = p.GetBaseKmPrice(),
             }).ToList();
 
             return Ok(policyList);
@@ -72,7 +72,7 @@ namespace OrdersMicroservice.src.contract.infrastructure
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPolicyById(string id)
         {
-            var policy = await _policyRepository.GetPolicyById(new domain.entities.policy.value_objects.PolicyId(id));
+            var policy = await _policyRepository.GetPolicyById(new PolicyId(id));
             if (!policy.HasValue())
             {
                 return NotFound(new { errorMessage = new PolicyNotFoundException().Message });
@@ -83,50 +83,26 @@ namespace OrdersMicroservice.src.contract.infrastructure
                 Name = policy.Unwrap().GetName(),
                 MonetaryCoverage = policy.Unwrap().GetMonetaryCoverage(),
                 KmCoverage = policy.Unwrap().GetkmCoverage(),
+                BaseKmPrice = policy.Unwrap().GetBaseKmPrice()
             };
             return Ok(policyData);
         }
-/*
+
         [HttpPatch("update/{id}")]
-        public async Task<IActionResult> UpdatePolicyById([FromBody] UpdatePolicyDto data, string id)
+        public async Task<IActionResult> UpdatePolicyById([FromBody] UpdatePolicyByIdDto data, string id)
         {
             try
             {
-                var validator = new UpdatePolicyByIdValidator();
-                if (!validator.Validate(data).IsValid)
-                {
-                    var errorMessages = validator.Validate(data).Errors.Select(e => e.ErrorMessage).ToList();
-                    return BadRequest(new { errors = errorMessages });
-                }
-                if (data.Name == null && data.MonetaryCoverage == null && data.KmCoverage == null)
-                {
-                    return BadRequest(new { errorMessage = "values is required" });
-                }
                 var service = new UpdatePolicyByIdCommandHandler(_policyRepository);
-                var command = new UpdatePolicyByIdCommand(id, data.Name, data.MonetaryCoverage, data.KmCoverage);
+                var command = new UpdatePolicyByIdCommand(id, data.Name, data.MonetaryCoverage, data.KmCoverage, data.BaseKmPrice);
                 var response = await service.Execute(command);
-                return Ok(new { message = "User has been updated" });
+                return Ok(new { message = "Policy has been updated" });
             }
             catch (Exception e)
             {
                 return BadRequest(new { errorMessage = e.Message });
             }
 
-        }
-*/
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> ToggleActivityPolicyById(string id)
-        {
-            try
-            {
-                var user = await GetPolicyById(id);
-                await _policyRepository.ToggleActivityPolicyById(new domain.entities.policy.value_objects.PolicyId(id));
-                return Ok(new { message = "Activity status of user has been changed" });
-            }
-            catch (Exception e)
-            {
-                return BadRequest(new { errorMessage = e.Message });
-            }
         }
     }
 }
