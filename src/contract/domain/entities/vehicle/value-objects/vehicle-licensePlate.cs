@@ -1,4 +1,5 @@
-﻿using OrdersMicroservice.Core.Domain;
+﻿using OrdersMicroservice.core.Common;
+using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.entities.vehicle.exceptions;
 
 namespace OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
@@ -9,22 +10,16 @@ namespace OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 
         public VehicleLicensePlate(string licensePlate)
         {
-            if (licensePlate.Length < 6 || licensePlate.Length > 7)
+            if (!PlateValidator.IsValid(licensePlate))
             {
                 throw new InvalidLicensePlateException();
             }
-
-            if (!System.Text.RegularExpressions.Regex.IsMatch(licensePlate, @"^[A-Z0-9\- ]+$"))
-            {
-                throw new InvalidLicensePlateException();
-            }
-
-            this._licensePlate = licensePlate;
+            _licensePlate = licensePlate;
         }
 
         public string GetLicensePlate()
         {
-            return this._licensePlate;
+            return _licensePlate;
         }
 
         public bool Equals(VehicleLicensePlate other)

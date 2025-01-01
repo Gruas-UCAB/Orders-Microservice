@@ -10,30 +10,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="src\ensuredVehicle\**" />
-    <Content Remove="src\ensuredVehicle\**" />
-    <EmbeddedResource Remove="src\ensuredVehicle\**" />
-    <None Remove="src\ensuredVehicle\**" />
+    <Compile Remove="src\contract\domain\entities\vehicle\application\**" />
+    <Compile Remove="src\contract\domain\entities\vehicle\domain\**" />
+    <Compile Remove="src\contract\domain\entities\vehicle\infrastructure\**" />
+    <Content Remove="src\contract\domain\entities\vehicle\application\**" />
+    <Content Remove="src\contract\domain\entities\vehicle\domain\**" />
+    <Content Remove="src\contract\domain\entities\vehicle\infrastructure\**" />
+    <EmbeddedResource Remove="src\contract\domain\entities\vehicle\application\**" />
+    <EmbeddedResource Remove="src\contract\domain\entities\vehicle\domain\**" />
+    <EmbeddedResource Remove="src\contract\domain\entities\vehicle\infrastructure\**" />
+    <None Remove="src\contract\domain\entities\vehicle\application\**" />
+    <None Remove="src\contract\domain\entities\vehicle\domain\**" />
+    <None Remove="src\contract\domain\entities\vehicle\infrastructure\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-    <PackageReference Include="MongoDB.Bson" Version="3.0.0" />
-    <PackageReference Include="MongoDB.Driver" Version="3.0.0" />
+    <PackageReference Include="MongoDB.Bson" Version="3.1.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.1.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="core\Infrastructure\" />
-    <Folder Include="src\contract\domain\entities\policy\application\repositories\dto\" />
-    <Folder Include="src\contract\domain\entities\policy\application\repositories\exceptions\" />
-    <Folder Include="src\contract\domain\entities\vehicle\application\commands\" />
-    <Folder Include="src\contract\domain\entities\vehicle\application\repositories\exceptions\" />
-    <Folder Include="src\contract\domain\entities\vehicle\domain\events\" />
-    <Folder Include="src\contract\domain\entities\vehicle\infrastructure\validators\" />
   </ItemGroup>
 
 </Project>

@@ -15,11 +15,11 @@ public class PolicyKmCoverage : IValueObject<PolicyKmCoverage>
             {
                 throw new InvalidPolicyKmCoverageException();
             }
-            this._kmCoverage = kmCoverage;
+            _kmCoverage = Math.Round(kmCoverage, 2); ;
         }
         public decimal GetKmCoverage()
         {
-            return this._kmCoverage ;
+            return _kmCoverage ;
         }
         public bool Equals(PolicyKmCoverage other)
         {

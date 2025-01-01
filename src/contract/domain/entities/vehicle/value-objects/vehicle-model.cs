@@ -1,40 +1,28 @@
 ﻿using OrdersMicroservice.Core.Domain;
+using OrdersMicroservice.src.contract.domain.entities.vehicle.exceptions;
 
 
 namespace OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 
-    public class VehicleModel : IValueObject<VehicleModel>
+public class VehicleModel : IValueObject<VehicleModel>
+{
+    private string _model;
+    public VehicleModel(string model)
     {
-        public string Model { get; }
-
-        public VehicleModel(string model)
+        if (string.IsNullOrEmpty(model) || model.Length > 30 || model.Length < 2)
         {
-            if (string.IsNullOrWhiteSpace(model))
-            {
-                throw new ArgumentException("Model cannot be null or empty", nameof(model));
-            }
-
-            Model = model;
+            throw new InvalidVehicleModelException();
         }
-
-        public string GetModel() => Model;
-
-        public bool Equals(VehicleModel other)
-        {
-            if (other == null) return false;
-            return Model == other.Model;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj is VehicleModel other)
-            {
-                return Equals(other);
-            }
-            return false;
-        }
-
-        public override int GetHashCode() => Model.GetHashCode();
+        _model = model;
     }
+    public string GetModel()
+    {
+        return _model;
+    }   
+    public bool Equals(VehicleModel other)
+    {
+        return other.GetModel() == _model;
+    }
+}
 
 

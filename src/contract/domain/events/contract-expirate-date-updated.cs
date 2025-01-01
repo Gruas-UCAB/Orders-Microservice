@@ -5,30 +5,21 @@ using OrdersMicroservice.src.contract.domain.value_objects;
 
 namespace OrdersMicroservice.src.contract.domain.events
 {
-    public class ExpirationDateUpdatedEvent : DomainEvent<object>
+    public class ContractExpirationDateUpdatedEvent : DomainEvent<object>
         {   
-        public ExpirationDateUpdatedEvent(string dispatcherId, string name, ExpirationDateUpdated context) : base(dispatcherId, name, context){ }
+        public ContractExpirationDateUpdatedEvent(string dispatcherId, string name, ContractExpirationDateUpdated context) : base(dispatcherId, name, context){ }
     }
 
-    public class ExpirationDateUpdated( DateTime expirationDate ) 
+    public class ContractExpirationDateUpdated( DateTime expirationDate ) 
     {
-       
-
         public DateTime ExpirationDate = expirationDate;
-
-     
-
-
-        static public ExpirationDateUpdatedEvent CreateEvent(ContractId dispatcherId, ContractExpitionDate expirationDate )
+        static public ContractExpirationDateUpdatedEvent CreateEvent(ContractId dispatcherId, ContractExpitionDate expirationDate )
         {
-            return new ExpirationDateUpdatedEvent(
-                dispatcherId.GetContractId(),
-                typeof(ExpirationDateUpdated).Name,
-                new ExpirationDateUpdated(
+            return new ContractExpirationDateUpdatedEvent(
+                dispatcherId.GetId(),
+                typeof(ContractExpirationDateUpdated).Name,
+                new ContractExpirationDateUpdated(
                     expirationDate.GetExpirationDateContract()  
-                
-
-
                 )
             );
         }

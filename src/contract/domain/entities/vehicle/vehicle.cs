@@ -5,36 +5,19 @@ using OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 
 namespace OrdersMicroservice.src.contract.domain.entities.vehicle
 {
-    public class Vehicle : Entity<VehicleId>
+    public class Vehicle(VehicleId id, VehicleLicensePlate vehicleLicensePlate,
+           VehicleBrand vehicleBrand, VehicleModel vehicleModel, VehicleYear vehicleYear,
+           VehicleColor vehicleColor, VehicleKm vehicleKm, VehicleOwnerDni ownerDni, VehicleOwnerName ownerName) : Entity<VehicleId>(id)
     {
-        private VehicleLicensePlate _licensePlate;
-        private VehicleBrand _brand;
-        private VehicleModel _model;
-        private VehicleYear _year;
-        private VehicleColor _color;
-        private VehicleKm _km;
+        private VehicleLicensePlate _licensePlate = vehicleLicensePlate;
+        private VehicleBrand _brand = vehicleBrand;
+        private VehicleModel _model = vehicleModel;
+        private VehicleYear _year = vehicleYear;
+        private VehicleColor _color = vehicleColor;
+        private VehicleKm _km = vehicleKm;
+        private VehicleOwnerDni _ownerDni = ownerDni;
+        private VehicleOwnerName _ownerName = ownerName;
 
-        public Vehicle( VehicleId id, VehicleLicensePlate vehicleLicensePlate,
-               VehicleBrand vehicleBrand,VehicleModel vehicleModel, VehicleYear vehicleYear,
-               VehicleColor vehicleColor, VehicleKm vehicleKm) : base(id)
-        {
-            _licensePlate = vehicleLicensePlate;
-            _brand = vehicleBrand;
-            _model = vehicleModel;
-            _year = vehicleYear;
-            _color = vehicleColor;
-            _km = vehicleKm;
-
-        }
-        /*
-        protected override void ValidateState()
-        {
-            if (_licensePlate == null || _brand == null || _model == null || _year == null || _color == null || _km == null)
-            {
-                throw new InvalidVehicleException();
-            }
-        }
-        */
         public string GetId()
         {
             return _id.GetId();
@@ -59,27 +42,16 @@ namespace OrdersMicroservice.src.contract.domain.entities.vehicle
         {
             return _color.GetColor();
         }
-        public double GetKm()
+        public int GetKm()
         {
             return _km.GetKm();
         }
-        /*
-        public static Vehicle Create(VehicleId id, VehicleLicensePlate licensePlate, VehicleBrand brand, VehicleModel model, VehicleYear year, VehicleColor color, VehicleKm km)
+        public int GetOwnerDni()
         {
-            Vehicle vehicle = new(id);
-            vehicle.Apply(VehicleCreated.CreateEvent(id, licensePlate, brand, model, year, color, km));
-            return vehicle;
+            return _ownerDni.GetDni();
         }
-
-        private void OnVehicleCreatedEvent(VehicleCreated Event)
-        {
-            _licensePlate = new VehicleLicensePlate(Event.LicensePlate);
-            _brand = new VehicleBrand(Event.Brand);
-            _model = new VehicleModel(Event.Model);
-            _year = new VehicleYear(Event.Year);
-            _color = new VehicleColor(Event.Color);
-            _km = new VehicleKm(Event.Km);
+        public string GetOwnerName() {
+            return _ownerName.GetName();
         }
-        */
     }
 }
