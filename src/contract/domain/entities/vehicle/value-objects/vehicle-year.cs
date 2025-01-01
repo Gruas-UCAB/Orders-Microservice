@@ -1,41 +1,28 @@
 ﻿using OrdersMicroservice.Core.Domain;
-
+using OrdersMicroservice.src.contract.domain.entities.vehicle.exceptions;
 
 namespace OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 
-    public class VehicleYear : IValueObject<VehicleYear>
+public class VehicleYear : IValueObject<VehicleYear>
+{
+    private readonly int _year;
+
+    public VehicleYear(int year)
     {
-        public int Year { get; }
-
-        public VehicleYear(int year)
+        if (year < 1886 || year > DateTime.Now.Year + 1)
         {
-            if (year < 1886 || year > DateTime.Now.Year + 1) // The first car was invented in 1886
-            {
-                throw new ArgumentException("Year is not valid", nameof(year));
-            }
-
-            Year = year;
+        throw new InvalidVehicleYearException();
         }
-
-        public int GetYear() => Year;
-
-        public bool Equals(VehicleYear other)
-        {
-            if (other == null) return false;
-            return Year == other.Year;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj is VehicleYear other)
-            {
-                return Equals(other);
-            }
-            return false;
-        }
-
-        public override int GetHashCode() => Year.GetHashCode();
+        _year = year;
     }
+
+    public int GetYear() => _year;
+
+    public bool Equals(VehicleYear other)
+    {
+        return _year == other.GetYear();
+    }
+}
 
 
 

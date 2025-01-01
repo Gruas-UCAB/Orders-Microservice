@@ -3,7 +3,6 @@
     public record GetAllPolicesDto
     (
         int limit = 10,
-        int offset = 1,
-        bool active = true
+        int offset = 1
     );
 }

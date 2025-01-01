@@ -2,7 +2,7 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
     "Method": "CreateContract",
-    "RelativePath": "api/contract",
+    "RelativePath": "contract",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
     "Method": "GetAllContracts",
-    "RelativePath": "api/contract",
+    "RelativePath": "contract",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,39 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
     "Method": "GetContractById",
-    "RelativePath": "api/contract/{id}",
+    "RelativePath": "contract/by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "GetContractByContractNumber",
+    "RelativePath": "contract/by-number/{number}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "number",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
+    "Method": "GetContractPolicyById",
+    "RelativePath": "contract/policy/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -60,7 +92,7 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
     "Method": "ToggleActivityContractById",
-    "RelativePath": "api/contract/{id}",
+    "RelativePath": "contract/status/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -75,45 +107,8 @@
   },
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
-    "Method": "CreatePolicy",
-    "RelativePath": "api/contract/policy",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "OrdersMicroservice.src.contract.application.commands.create_policy.types.CreatePolicyCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
-    "Method": "GetPolicyById",
-    "RelativePath": "api/contract/policy/policy",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "contractId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "policyId",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
     "Method": "UpdateContractById",
-    "RelativePath": "api/contract/update/{id}",
+    "RelativePath": "contract/update/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -133,35 +128,14 @@
   },
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
-    "Method": "CreateVehicle",
-    "RelativePath": "api/contract/vehicle",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "command",
-        "Type": "OrdersMicroservice.src.contract.application.commands.create_vehicle.types.CreateVehicleCommand",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrdersMicroservice.src.contract.infrastructure.ContractController",
-    "Method": "GetCraneById",
-    "RelativePath": "api/contract/vehicle/vehicle",
+    "Method": "GetContractVehicleById",
+    "RelativePath": "contract/vehicle/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "contractId",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "vehicleId",
+        "Name": "id",
         "Type": "System.String",
         "IsRequired": true
       }
@@ -171,7 +145,7 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "CreatePolicy",
-    "RelativePath": "api/policy",
+    "RelativePath": "policy",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -187,17 +161,28 @@
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "GetAllPolicies",
-    "RelativePath": "api/policy",
+    "RelativePath": "policy",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "limit",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "offset",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
     "Method": "GetPolicyById",
-    "RelativePath": "api/policy/{id}",
+    "RelativePath": "policy/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -212,12 +197,17 @@
   },
   {
     "ContainingType": "OrdersMicroservice.src.contract.infrastructure.PolicyController",
-    "Method": "ToggleActivityPolicyById",
-    "RelativePath": "api/policy/{id}",
+    "Method": "UpdatePolicyById",
+    "RelativePath": "policy/update/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "data",
+        "Type": "OrdersMicroservice.src.contract.infrastructure.dto.UpdatePolicyByIdDto",
+        "IsRequired": true
+      },
       {
         "Name": "id",
         "Type": "System.String",

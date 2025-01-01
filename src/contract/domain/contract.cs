@@ -18,9 +18,9 @@ namespace OrdersMicroservice.src.contract.domain
 
         private NumberContract _contractNumber ;
         private ContractExpitionDate _contractExpirationDate ;
-        private  bool _isActive = true;
         private Vehicle _vehicle;
         private Policy _policy;
+        private  bool _isActive = true;
 
         protected override void ValidateState()
         {
@@ -30,11 +30,11 @@ namespace OrdersMicroservice.src.contract.domain
             }
         }
 
-        public string GetContractId()
+        public string GetId()
         {
-            return _id.GetContractId();
+            return _id.GetId();
         }
-        public decimal GetContractNumber()
+        public int GetContractNumber()
         {
             return _contractNumber.GetNumberContract();
         }
@@ -48,8 +48,6 @@ namespace OrdersMicroservice.src.contract.domain
         {
             return _policy;
         }
-
-
         public DateTime GetContractExpirationDate()
         {
             return _contractExpirationDate.GetExpirationDateContract();
@@ -64,89 +62,36 @@ namespace OrdersMicroservice.src.contract.domain
         {
             _isActive = !_isActive;
         }
-
-     
-        public static Contract Create(ContractId id, NumberContract numberContract, ContractExpitionDate expirationDate, Vehicle vehicle/*, Policy policy*/) 
+        public static Contract Create(ContractId id, NumberContract numberContract, ContractExpitionDate expirationDate, Vehicle vehicle, Policy policy) 
         {
             Contract contract = new(id);
-            contract.Apply(ContractCreated.CreateEvent(id, numberContract, expirationDate, vehicle /*, policy*/));
+            contract.Apply(ContractCreated.CreateEvent(id, numberContract, expirationDate, vehicle, policy));
             return contract;
-           
         }
-
-        public Vehicle  AddVehicle(VehicleId id, VehicleLicensePlate vehicleLicensePlate,
-               VehicleBrand vehicleBrand, VehicleModel vehicleModel, VehicleYear vehicleYear,
-               VehicleColor vehicleColor, VehicleKm vehicleKm)
+        public ContractId UpdateExpirationDate(ContractExpitionDate expirationDate)
         {
-            Apply(VehicleCreated.CreateEvent(_id, id, vehicleLicensePlate, vehicleBrand, vehicleModel, vehicleYear, vehicleColor, vehicleKm));
-            return _vehicle;
+            Apply(ContractExpirationDateUpdated.CreateEvent(_id, expirationDate));
+            return _id;
         }
-        public Policy AddPolicy(PolicyId id, PolicyName name, PolicyMonetaryCoverage monetaryCoverage, PolicyKmCoverage kmCoverage)
+        public Policy UpdateContractPolicy(Policy policy)
         {
-            Apply(PolicyCreated.CreateEvent(_id, id,name, monetaryCoverage, kmCoverage));
+            Apply(ContractPolicyUpdated.CreateEvent(_id, policy));
             return _policy;
         }
-
         private void OnContractCreatedEvent(ContractCreated Event)
         {
             _contractNumber = new NumberContract(Event.NumberContract);
             _contractExpirationDate = new ContractExpitionDate(Event.ExpirationDate);
             _vehicle = Event.Vehicle;
-            /*_policy = Event.Policy;*/
+            _policy = Event.Policy;
         }
-        /*
-        private Vehicle OnVehicleCreatedEvent(VehicleCreated Event)
-        {
-            var vehicle = new Vehicle(
-                    new VehicleId(Event.Id),
-                    new VehicleLicensePlate(Event.LicensePlate),
-                    new VehicleBrand(Event.Brand),
-                    new VehicleModel(Event.Model),
-                    new VehicleYear(Event.Year),
-                    new VehicleColor(Event.Color),
-                    new VehicleKm(Event.Km)
-                    );
-            _vehicle.Add(vehicle);// este no ?
-            return vehicle;
-        }*/
-        /*
-        private Policy OnPolicyCreatedEvent(PolicyCreated Event)
-        {
-            var policy = new Policy(
-                    new PolicyId(Event.Id),
-                    new PolicyName(Event.Name),
-                    new PolicyMonetaryCoverage(Event.MonetaryCoverage),
-                    new PolicyKmCoverage(Event.KmCoverage)
-                );
-            _policy.Add(policy);
-            return policy;
-        }
-        */
-
-
-
-
-        public void UpdateNumberContract(NumberContract numberContract)
-        {
-            Apply(NumberContractUpdated.CreateEvent(_id, numberContract));
-            Console.WriteLine("Ya aplico");
-        }
-
-        public void UpdateExpirationDate(ContractExpitionDate expirationDate)
-        {
-            Apply(ExpirationDateUpdated.CreateEvent(_id, expirationDate));
-        }
-
-        private void OnContractNumberUpdatedEvent(NumberContractUpdatedEvent Event)
-        {
-            Console.WriteLine("Ya reacciono");
-             _contractNumber = new NumberContract(Event.NumberContract);
-        }
-
-        private void OnContractExpirationDateUpdatedEvent(ExpirationDateUpdated Event)
+        private void OnContractExpirationDateUpdatedEvent(ContractExpirationDateUpdated Event)
         {
             _contractExpirationDate = new ContractExpitionDate(Event.ExpirationDate);
         }
-        
+        private void OnContractPolicyUpdatedEvent(ContractPolicyUpdated Event)
+        {
+            _policy = Event.Policy;
+        }
     }
 }

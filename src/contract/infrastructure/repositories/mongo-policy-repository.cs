@@ -1,30 +1,26 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-
-
 using OrdersMicroservice.core.Common;
 using OrdersMicroservice.core.Infrastructure;
-
-using OrdersMicroservice.src.policy.application.commands.update_policy.types;
-
-
 using OrdersMicroservice.src.contract.application.repositories;
-
 using OrdersMicroservice.src.contract.infrastructure.models;
 using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
 using OrdersMicroservice.src.contract.domain.entities.policy;
+using OrdersMicroservice.src.contract.application.commands.update_contract.types;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using OrdersMicroservice.src.contract.application.repositories.dto;
 
 namespace OrdersMicroservice.src.contract.infrastructure.repositories
 {
     public class MongoPolicyRepository : IPolicyRepository
     {
         internal MongoDBConfig _config = new();
-        private readonly IMongoCollection<BsonDocument> policyCollection;
+        private readonly IMongoCollection<BsonDocument> _policyCollection;
 
         public MongoPolicyRepository()
         {
-            policyCollection = _config.db.GetCollection<BsonDocument>("policy");
+            _policyCollection = _config.db.GetCollection<BsonDocument>("policies");
         }
 
         public async Task<Policy> SavePolicy(Policy policy)
@@ -35,6 +31,7 @@ namespace OrdersMicroservice.src.contract.infrastructure.repositories
                 Name = policy.GetName(),
                 MonetaryCoverage = policy.GetMonetaryCoverage(),
                 KmCoverage = policy.GetkmCoverage(),
+                BaseKmPrice = policy.GetBaseKmPrice(),
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now,
             };
@@ -45,122 +42,81 @@ namespace OrdersMicroservice.src.contract.infrastructure.repositories
                 {"name", mongoPolicy.Name},
                 {"monetaryCoverage", mongoPolicy.MonetaryCoverage},
                 {"kmCoverage", mongoPolicy.KmCoverage},
-
+                {"baseKmPrice", mongoPolicy.BaseKmPrice},
                 {"createdAt", mongoPolicy.CreatedAt },
                 {"updatedAt", mongoPolicy.UpdatedAt }
             };
 
-            await policyCollection.InsertOneAsync(bsonDocument);
+            await _policyCollection.InsertOneAsync(bsonDocument);
 
             var savedPolicy = new Policy(
                 new PolicyId(mongoPolicy.Id),
                 new PolicyName(mongoPolicy.Name),
                 new PolicyMonetaryCoverage(mongoPolicy.MonetaryCoverage),
-                new PolicyKmCoverage(mongoPolicy.KmCoverage));
-
+                new PolicyKmCoverage(mongoPolicy.KmCoverage),
+                new PolicyBaseKmPrice(mongoPolicy.BaseKmPrice)
+                );
 
             return savedPolicy;
         }
-        public async Task<_Optional<List<Policy>>> GetAllPolicies()
+        public async Task<_Optional<List<Policy>>> GetAllPolicies(GetAllPolicesDto data)
         {
+            var filter = Builders<BsonDocument>.Filter.Empty;
 
-            var policies = await policyCollection.Find(new BsonDocument()).ToListAsync();
-            var policyList = policies.Select(policy => new Policy(
-                new PolicyId(policy["_id"].AsString),
-                new PolicyName(policy["name"].AsString),
-                new PolicyMonetaryCoverage(policy["monetaryCoverage"].AsDecimal),
-                new PolicyKmCoverage(policy["kmCoverage"].AsDecimal)
-
-            )).ToList();
-
-            if (policyList.Count == 0)
+            var policies = await _policyCollection.Find(filter).Limit(data.limit).Skip(data.limit * (data.offset - 1)).ToListAsync();
+            var policiesList = new List<Policy>();
+            foreach (var bsonPolicy in policies)
+            {
+                var policy = new Policy(
+                        new PolicyId(bsonPolicy["_id"].AsString),
+                        new PolicyName(bsonPolicy["name"].AsString),
+                        new PolicyMonetaryCoverage(bsonPolicy["monetaryCoverage"].AsDecimal),
+                        new PolicyKmCoverage(bsonPolicy["kmCoverage"].AsDecimal),
+                        new PolicyBaseKmPrice(bsonPolicy["baseKmPrice"].AsDecimal)
+                    );
+                policiesList.Add(policy);
+            }
+            if (policiesList.Count == 0)
             {
                 return _Optional<List<Policy>>.Empty();
             }
-
-            return _Optional<List<Policy>>.Of(policyList);
+            return _Optional<List<Policy>>.Of(policiesList);
         }
-
         public async Task<_Optional<Policy>> GetPolicyById(PolicyId id)
         {
             try
             {
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", id.GetId());
-                var bsonUser = await policyCollection.Find(filter).FirstOrDefaultAsync();
-
-                if (bsonUser == null)
+                var bsonPolicy = await _policyCollection.Find(filter).FirstOrDefaultAsync();
+                if (bsonPolicy == null)
                 {
                     return _Optional<Policy>.Empty();
                 }
-
                 var policy = new Policy(
-                    new PolicyId(bsonUser["_id"].AsString),
-                    new PolicyName(bsonUser["name"].AsString),
-                    new PolicyMonetaryCoverage(bsonUser["monetaryCoverage"].AsDecimal),
-                    new PolicyKmCoverage(bsonUser["kmCoverage"].AsDecimal)
-
-                );
-
-
-
+                    new PolicyId(bsonPolicy["_id"].AsString),
+                    new PolicyName(bsonPolicy["name"].AsString),
+                    new PolicyMonetaryCoverage(bsonPolicy["monetaryCoverage"].AsDecimal),
+                    new PolicyKmCoverage(bsonPolicy["kmCoverage"].AsDecimal),
+                    new PolicyBaseKmPrice(bsonPolicy["baseKmPrice"].AsDecimal)
+                    );
                 return _Optional<Policy>.Of(policy);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 return _Optional<Policy>.Empty();
             }
         }
-
-        public async Task<PolicyId> UpdatePolicyById(UpdatePolicyByIdCommand command)
+        public async Task<PolicyId> UpdatePolicy(Policy policy)
         {
-            var user = await GetPolicyById(new PolicyId(command.Id));
-            if (!user.HasValue())
-            {
-                throw new PolicyNotFoundException();
-            }
-
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", command.Id);
-
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", policy.GetId());
             var update = Builders<BsonDocument>.Update
+                .Set("name", policy.GetName())
+                .Set("monetaryCoverage", policy.GetMonetaryCoverage())
+                .Set("kmCoverage", policy.GetkmCoverage())
+                .Set("baseKmPrice", policy.GetBaseKmPrice())
                 .Set("updatedAt", DateTime.Now);
-
-            if (command.Name != null)
-            {
-                update = update.Set("name", command.Name);
-            }
-            if (command.MonetaryCoverage != null)
-            {
-                update = update.Set("monetaryCoverage", command.MonetaryCoverage);
-            }
-            if (command.KmCoverage != null)
-            {
-                update = update.Set("kmCoverage", command.KmCoverage);
-            }
-
-            await policyCollection.UpdateOneAsync(filter, update);
-
-            return new PolicyId(command.Id);
+            await _policyCollection.UpdateOneAsync(filter, update);
+            return new PolicyId(policy.GetId());
         }
-
-        public async Task<PolicyId> ToggleActivityPolicyById(PolicyId id)
-        {
-            var policy = await GetPolicyById(id);
-            if (!policy.HasValue())
-            {
-                throw new PolicyNotFoundException();
-            }
-
-
-
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", id.GetId());
-            var update = Builders<BsonDocument>.Update
-                .Set("updatedAt", DateTime.Now);
-
-            await policyCollection.UpdateOneAsync(filter, update);
-
-            return id;
-        }
-
     }
 }

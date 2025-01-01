@@ -2,9 +2,7 @@
 {
     public record UpdateContractDto
     (
-        
-        decimal NumberContract,
-        DateTime ExpirationDate
-        
+        string? PolicyId,
+        DateTime? ExpirationDate
     );
 }

@@ -2,18 +2,16 @@ namespace OrdersMicroservice.src.contract.application.commands.create_contract.t
 {
     public record CreateContractCommand(
 
-        decimal ContractNumber,
+        int ContractNumber,
         DateTime ContractExpirationDate,
-
-        string ContractId,
-        string licensePlate,
-        string brand,
-        string model,
-        int year,
-        string color,
-        double km,
-
+        string LicensePlate,
+        string Brand,
+        string Model,
+        int Year,
+        string Color,
+        int Km,
+        int OwnerDni,
+        string OwnerName,
         string PolicyId
-
         );
 }
