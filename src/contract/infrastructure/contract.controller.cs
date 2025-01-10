@@ -1,28 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrdersMicroservice.core.Application;
-using OrdersMicroservice.core.Infrastructure;
 using OrdersMicroservice.src.contract.application.commands.create_contract.types;
 using OrdersMicroservice.src.contract.application.repositories;
 using OrdersMicroservice.src.contract.infrastructure.dto;
-using contractsMicroservice.src.contract.infrastructure.repositories;
 using OrdersMicroservice.src.contract.application.repositories.dto;
-using OrdersMicroservice.src.contract.infrastructure.repositories;
 using OrdersMicroservice.src.contract.infrastructure.validators;
 using OrdersMicroservice.src.contract.application.commands.create_contract;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
 using OrdersMicroservice.src.contract.domain.value_objects;
 using OrdersMicroservice.src.contract.application.commands.update_contract;
 using OrdersMicroservice.src.contract.application.commands.update_contract.types;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OrdersMicroservice.src.contract.infrastructure
 {
     [Route("contract")]
     [ApiController]
-    public class ContractController : Controller
+    [Authorize]
+    public class ContractController(IContractRepository contractRepository, 
+        IPolicyRepository policyRepository, IIdGenerator<string> idGenerator) : Controller
     {
-        private readonly IContractRepository _contractRepository = new MongoContractRepository();
-        private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
-        private readonly IIdGenerator<string> _idGenerator = new UUIDGenerator();
+        private readonly IContractRepository _contractRepository = contractRepository;
+        private readonly IPolicyRepository _policyRepository = policyRepository;
+        private readonly IIdGenerator<string> _idGenerator = idGenerator;
 
         [HttpPost]
         public async Task<IActionResult> CreateContract(CreateContractCommand command)

@@ -2,8 +2,6 @@
 using MongoDB.Driver;
 using OrdersMicroservice.core.Common;
 using OrdersMicroservice.core.Infrastructure;
-
-using OrdersMicroservice.src.contract.application.commands.update_contract.types;
 using OrdersMicroservice.src.contract.application.repositories;
 using OrdersMicroservice.src.contract.application.repositories.dto;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
@@ -14,10 +12,6 @@ using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
 using OrdersMicroservice.src.contract.domain.entities.vehicle;
 using OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 using OrdersMicroservice.src.contract.infrastructure.models;
-using Microsoft.AspNetCore.Mvc;
-
-
-
 
 namespace contractsMicroservice.src.contract.infrastructure.repositories
 {

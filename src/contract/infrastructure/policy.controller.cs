@@ -1,30 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrdersMicroservice.core.Application;
-using OrdersMicroservice.core.Infrastructure;
 using OrdersMicroservice.src.contract.application.commands.create_policy.types;
 using OrdersMicroservice.src.contract.application.repositories;
 using OrdersMicroservice.src.contract.application.repositories.dto;
 using OrdersMicroservice.src.contract.application.repositories.exceptions;
-
-using OrdersMicroservice.src.contract.infrastructure.repositories;
 using OrdersMicroservice.src.contract.infrastructure.validators;
 using OrdersMicroservice.src.policy.application.commands.create_policy;
 using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
 using OrdersMicroservice.src.contract.infrastructure.dto;
-using OrdersMicroservice.src.contract.application.commands.update_contract.exceptions;
 using OrdersMicroservice.src.contract.application.commands.update_contract;
 using OrdersMicroservice.src.contract.application.commands.update_contract.types;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace OrdersMicroservice.src.contract.infrastructure
 {
     [Route("policy")]
     [ApiController]
-    public class PolicyController : Controller
+    [Authorize]
+    public class PolicyController(IPolicyRepository policyRepository, IIdGenerator<string> idGenerator) : Controller
     {
-        private readonly IPolicyRepository _policyRepository = new MongoPolicyRepository();
-
-        private readonly IIdGenerator<string> _idGenerator = new UUIDGenerator();
+        private readonly IPolicyRepository _policyRepository = policyRepository;
+        private readonly IIdGenerator<string> _idGenerator = idGenerator;
 
         [HttpPost]
         public async Task<IActionResult> CreatePolicy(CreatePolicyCommand command)

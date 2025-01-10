@@ -1,15 +1,9 @@
-
 using OrdersMicroservice.Core.Domain;
 using OrdersMicroservice.src.contract.domain.entities.policy;
-using OrdersMicroservice.src.contract.domain.entities.policy.value_objects;
 using OrdersMicroservice.src.contract.domain.entities.vehicle;
-using OrdersMicroservice.src.contract.domain.entities.vehicle.value_objects;
 using OrdersMicroservice.src.contract.domain.events;
 using OrdersMicroservice.src.contract.domain.exceptions;
 using OrdersMicroservice.src.contract.domain.value_objects;
-
-
-
 
 namespace OrdersMicroservice.src.contract.domain
 {
