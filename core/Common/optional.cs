@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.core.Common
+﻿namespace OrdersMicroservice.core.Common
 {
     public class _Optional<T>
     {

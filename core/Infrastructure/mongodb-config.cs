@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace UsersMicroservice.core.Infrastructure
+namespace OrdersMicroservice.core.Infrastructure
 {
     public class MongoDBConfig
     {

@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using UsersMicroservice.Core.Common;
-using UsersMicroservice.Core.Domain;
+using OrdersMicroservice.Core.Common;
+using OrdersMicroservice.Core.Domain;
 
-namespace UsersMicroservice.core.Application
+namespace OrdersMicroservice.core.Application
 {
     public class Subscription(Action unsubscribe)
     {

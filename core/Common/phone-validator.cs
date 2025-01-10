@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace UsersMicroservice.Core.Common
+namespace OrdersMicroservice.Core.Common
 {
     public static class PhoneNumberValidator
     {

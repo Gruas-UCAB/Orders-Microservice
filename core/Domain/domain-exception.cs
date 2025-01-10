@@ -1,4 +1,4 @@
-﻿namespace UsersMicroservice.Core.Domain
+﻿namespace OrdersMicroservice.Core.Domain
 {
     public class DomainException : Exception
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace UsersMicroservice.Core.Domain
+namespace OrdersMicroservice.Core.Domain
 {
     public static class UUIDValidator
     {
