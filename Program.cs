@@ -98,8 +98,26 @@ builder.Services.AddAuthorization(options =>
 });
 builder.Services.AddScoped<ITokenAuthenticationService, JwtService>();
 
-builder.Services.AddControllers();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Orders Microservice API",
+        Description = "API documentation for Orders Microservice"
+    });
+});
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Orders Microservice API v1");
+        c.RoutePrefix = string.Empty; 
+    });
+}
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

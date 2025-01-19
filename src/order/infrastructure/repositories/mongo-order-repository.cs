@@ -6,6 +6,7 @@ using OrdersMicroservice.src.contract.domain.value_objects;
 using OrdersMicroservice.src.extracost.domain.value_objects;
 using OrdersMicroservice.src.order.application.repositories;
 using OrdersMicroservice.src.order.application.repositories.dto;
+using OrdersMicroservice.src.order.application.repositories.exceptions;
 using OrdersMicroservice.src.order.domain;
 using OrdersMicroservice.src.order.domain.entities.extraCost;
 using OrdersMicroservice.src.order.domain.value_objects;
@@ -122,6 +123,21 @@ namespace OrdersMicroservice.src.order.infrastructure.repositories
             return (ordersList.Count == 0) ? _Optional<List<Order>>.Empty() : _Optional<List<Order>>.Of(ordersList);
         }
 
+        public async Task<_Optional<List<Order>>> GetAllOrdersByConductorId(ConductorAssignedId id)
+        {
+            var ordersFind = await GetAllOrders(new GetAllOrdersDto());
+            if (!ordersFind.HasValue())
+                throw new NoOrdersFoundException();
+            var ordersOfConductor = new List<Order>();
+            var orders = ordersFind.Unwrap();
+            orders.ForEach(order =>
+            {
+                if (order.GetConductorAssignedId() == id.GetId())
+                    ordersOfConductor.Add(order);
+            });
+            return ordersOfConductor.Count == 0 ? _Optional<List<Order>>.Empty() : _Optional<List<Order>>.Of(ordersOfConductor);
+        }
+
         public async Task<_Optional<Order>> GetOrderById(OrderId id)
         {
             try
@@ -209,6 +225,52 @@ namespace OrdersMicroservice.src.order.infrastructure.repositories
                 .Set("updatedAt", DateTime.Now);
             await _orderCollection.UpdateOneAsync(filter, update);
             return order;
+        }
+
+        public async Task<_Optional<List<Order>>> GetAllAssignedOrdersToUnnassign()
+        {
+            var ordersFind = await GetAllOrders(new GetAllOrdersDto());
+            if (!ordersFind.HasValue())
+            {
+                throw new NoOrdersFoundException();
+            }
+            var orders = ordersFind.Unwrap();
+            var ordersList = new List<Order>();
+            foreach (var order in orders) {
+                if (string.Equals(order.GetStatus(), "por aceptar", StringComparison.OrdinalIgnoreCase))
+                {
+                    var filter = Builders<BsonDocument>.Filter.Eq("_id", order.GetId());
+                    var bsonOrder = await _orderCollection.Find(filter).FirstOrDefaultAsync();
+                    if (bsonOrder["updatedAt"].ToUniversalTime() > DateTime.Now.AddMinutes(-6).ToUniversalTime())
+                    {
+                        ordersList.Add(order);
+                    }
+                }
+            }
+            if (ordersList.Count == 0)
+            {
+                return _Optional<List<Order>>.Empty();
+            }
+            return _Optional<List<Order>>.Of(ordersList);
+        }
+
+        public async Task<_Optional<Order>> GetCurrentOrderByConductorId(ConductorAssignedId id)
+        {
+            var ordersFind = await GetAllOrders(new GetAllOrdersDto());
+            if (!ordersFind.HasValue())
+            {
+                return _Optional<Order>.Empty();
+            }
+            var orders = ordersFind.Unwrap();
+            var currentOrder = orders.FirstOrDefault(o => o.GetConductorAssignedId() == id.GetId()
+            && !string.Equals(o.GetStatus(), "finalizado", StringComparison.OrdinalIgnoreCase)
+            && !string.Equals(o.GetStatus(), "pagado", StringComparison.OrdinalIgnoreCase)
+            && !string.Equals(o.GetStatus(), "cancelado", StringComparison.OrdinalIgnoreCase));
+            if (currentOrder == null)
+            {
+                return _Optional<Order>.Empty();
+            }
+            return _Optional<Order>.Of(currentOrder);
         }
     }
 }

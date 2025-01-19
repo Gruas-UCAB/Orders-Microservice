@@ -163,6 +163,101 @@ namespace OrdersMicroservice.src.order.infrastructure
             return Ok("The conductor has been assigned");
         }
 
+        [HttpGet("current-order-by-conductor/{conductorId}")]
+        public async Task<IActionResult> GetCurrentOrderByConductor(string conductorId)
+        {
+            var order = await _orderRepository.GetCurrentOrderByConductorId(new ConductorAssignedId(conductorId));
+            if (!order.HasValue())
+            {
+                return BadRequest(new { errorMessage = new NoOrderAssignedToConductorException().Message });
+            }
+            var orderData = order.Unwrap();
+            var orderResponse = new
+            {
+                Id = orderData.GetId(),
+                OrderNumber = orderData.GetOrderNumber(),
+                OrderDate = orderData.GetDate(),
+                OrderStatus = orderData.GetStatus(),
+                IncidentType = orderData.GetIncidentType(),
+                Destination = orderData.GetDestination(),
+                Location = orderData.GetLocation(),
+                DispatcherId = orderData.GetDispatcherId(),
+                ConductorAssignedId = orderData.GetConductorAssignedId(),
+                Cost = orderData.GetCost(),
+                IsCostCoveredByPolicy = orderData.IsCostCoveredByPolicy(),
+                ExtraCosts = orderData.GetExtraCosts()
+                    .Select(
+                        ec => new
+                        {
+                            Id = ec.GetId(),
+                            Description = ec.GetDescription(),
+                            Price = ec.GetPrice()
+                        }).ToList(),
+                ContractId = orderData.GetContractId(),
+                Payed = orderData.IsPayed(),
+            };
+            return Ok(orderResponse);
+        }
+
+        [HttpGet("all-orders-by-conductor/{conductorId}")]
+        public async Task<IActionResult> GetAllOrdersByConductor(string conductorId)
+        {
+            var orders = await _orderRepository.GetAllOrdersByConductorId(new ConductorAssignedId(conductorId));
+            if (!orders.HasValue())
+            {
+                return BadRequest(new { errorMessage = new NoOrderAssignedToConductorException().Message });
+            }
+            var ordersList = orders.Unwrap()
+                .Select(
+                    o => new
+                    {
+                        Id = o.GetId(),
+                        OrderNumber = o.GetOrderNumber(),
+                        OrderDate = o.GetDate(),
+                        OrderStatus = o.GetStatus(),
+                        IncidentType = o.GetIncidentType(),
+                        Destination = o.GetDestination(),
+                        Location = o.GetLocation(),
+                        DispatcherId = o.GetDispatcherId(),
+                        ConductorAssignedId = o.GetConductorAssignedId(),
+                        Cost = o.GetCost(),
+                        IsCostCoveredByPolicy = o.IsCostCoveredByPolicy(),
+                        ExtraCosts = o.GetExtraCosts()
+                            .Select(
+                                ec => new
+                                {
+                                    Id = ec.GetId(),
+                                    Description = ec.GetDescription(),
+                                    Price = ec.GetPrice()
+                                }).ToList(),
+                        ContractId = o.GetContractId(),
+                        Payed = o.IsPayed(),
+                    }
+                ).ToList();
+            return Ok( ordersList );
+        }
+
+        [HttpPatch("check-assigned-orders")]
+        public async Task<IActionResult> CheckAllAssignedOrders()
+        {
+            var ordersFound = await _orderRepository.GetAllAssignedOrdersToUnnassign();
+            if (!ordersFound.HasValue())
+            {
+                return BadRequest(new { errorMessage = new NoOrdersFoundException().Message });
+            }
+            var orders = ordersFound.Unwrap();
+            foreach (var order in orders)
+            {
+                var service = new ToggleAcceptOrderCommandHandler(_orderRepository, _publishEndpoint);
+                var response = await service.Execute(new ToggleAcceptOrderCommand(order.GetId(), false));
+                if (response.IsFailure)
+                {
+                    return BadRequest(new { errorMessage = response.ErrorMessage() });
+                }
+            }
+            return Ok("All assigned orders with 6 minutes or more have been unnassigned");
+        }
+
         [HttpPatch("toggle-accept/{orderId}")]
         public async Task<IActionResult> ToggleAcceptOrder([FromBody] AcceptOrderDto data, [FromHeader(Name = "Authorization")] string token, string orderId)
         {

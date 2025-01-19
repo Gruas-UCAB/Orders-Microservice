@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\OrdersMicroservice\\OrdersMicroservice.csproj": {}
+    "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\OrdersMicroservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\OrdersMicroservice\\OrdersMicroservice.csproj": {
+    "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\OrdersMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\OrdersMicroservice\\OrdersMicroservice.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\OrdersMicroservice.csproj",
         "projectName": "OrdersMicroservice",
-        "projectPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\OrdersMicroservice\\OrdersMicroservice.csproj",
+        "projectPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\OrdersMicroservice.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\OrdersMicroservice\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,9 +86,9 @@
               "target": "Package",
               "version": "[112.1.0, )"
             },
-            "Swashbuckle.AspNetCore.Swagger": {
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[7.1.0, )"
+              "version": "[7.2.0, )"
             }
           },
           "imports": [

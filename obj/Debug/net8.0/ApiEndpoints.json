@@ -265,6 +265,22 @@
   },
   {
     "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
+    "Method": "GetAllOrdersByConductor",
+    "RelativePath": "order/all-orders-by-conductor/{conductorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conductorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
     "Method": "AssignConductor",
     "RelativePath": "order/assign-conductor/{orderId}",
     "HttpMethod": "PATCH",
@@ -315,6 +331,32 @@
     "Parameters": [
       {
         "Name": "orderId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
+    "Method": "CheckAllAssignedOrders",
+    "RelativePath": "order/check-assigned-orders",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
+    "Method": "GetCurrentOrderByConductor",
+    "RelativePath": "order/current-order-by-conductor/{conductorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conductorId",
         "Type": "System.String",
         "IsRequired": true
       }

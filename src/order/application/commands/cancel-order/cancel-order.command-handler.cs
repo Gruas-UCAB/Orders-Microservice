@@ -24,7 +24,7 @@ namespace OrdersMicroservice.src.order.application.commands.cancel_order
                 return Result<CancelOrderResponse>.Failure(new OrderNotFoundExcepion());
             }
             var order = orderFind.Unwrap();
-            if (!string.Equals(order.GetStatus(), "localizado", StringComparison.OrdinalIgnoreCase) || !string.Equals(order.GetStatus(), "en proceso", StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(order.GetStatus(), "localizado", StringComparison.OrdinalIgnoreCase) && !string.Equals(order.GetStatus(), "en proceso", StringComparison.OrdinalIgnoreCase))
             {
                 return Result<CancelOrderResponse>.Failure(new OrderCantBeCancelledException());
             }
