@@ -1,12 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\infrastructure\\extra-cost-controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\infrastructure\\extra-cost-controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\ANTONIO\\Desktop\\ProyectoDW-GRUA\\RepoBackend-Order-UnitTests\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 295,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,20 +17,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "extra-cost-controller.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\infrastructure\\extra-cost-controller.cs",
-              "RelativeDocumentMoniker": "src\\order\\infrastructure\\extra-cost-controller.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\infrastructure\\extra-cost-controller.cs",
-              "RelativeToolTip": "src\\order\\infrastructure\\extra-cost-controller.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAcwF8AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T04:24:29Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         }
