@@ -12,7 +12,7 @@ namespace OrdersMicroservice.src.order.domain.services
         {
             var extraCostsTotal = data.ExtraCosts.Sum(e => e.GetPrice());
             var policy = data.Contract.GetPolicy();
-            if (extraCostsTotal <= policy.GetMonetaryCoverage() || data.Order.IsCostCoveredByPolicy())
+            if (extraCostsTotal <= policy.GetMonetaryCoverage() && data.Order.IsCostCoveredByPolicy())
             {
                 data.Order.CostCoveredByPolicy();
                 return new OrderCost(data.Order.GetCost());

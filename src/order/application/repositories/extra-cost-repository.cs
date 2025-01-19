@@ -10,5 +10,6 @@ namespace OrdersMicroservice.src.order.application.repositories
         Task<ExtraCost> SaveExtraCost(ExtraCost extraCost);
         Task<_Optional<List<ExtraCost>>> GetAllExtraCosts(GetAllExtraCostsDto data);
         Task<_Optional<ExtraCost>> GetExtraCostById(ExtraCostId id);
+        Task<ExtraCost> UpdateExtraCost(ExtraCost extraCost);
     }
 }

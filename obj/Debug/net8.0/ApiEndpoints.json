@@ -196,6 +196,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "OrdersMicroservice.src.order.infrastructure.ExtraCostController",
+    "Method": "UpdateExtraCost",
+    "RelativePath": "extra-cost/update/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "OrdersMicroservice.src.order.infrastructure.dto.UpdateExtraCostDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
     "Method": "CreateOrder",
     "RelativePath": "order",
@@ -357,6 +378,27 @@
     "Parameters": [
       {
         "Name": "conductorId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrdersMicroservice.src.order.infrastructure.OrderController",
+    "Method": "EditExtraCosts",
+    "RelativePath": "order/edit-extra-costs/{orderId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "OrdersMicroservice.src.order.infrastructure.dto.EditExtraCostsDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "orderId",
         "Type": "System.String",
         "IsRequired": true
       }

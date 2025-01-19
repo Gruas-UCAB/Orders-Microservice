@@ -93,5 +93,15 @@ namespace OrdersMicroservice.src.order.infrastructure.repositories
                 return _Optional<ExtraCost>.Empty();
             }
         }
+        public async Task<ExtraCost> UpdateExtraCost(ExtraCost extraCost)
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", extraCost.GetId());
+            var update = Builders<BsonDocument>.Update
+                .Set("description", extraCost.GetDescription())
+                .Set("defaultPrice", extraCost.GetPrice())
+                .Set("updatedAt", DateTime.Now);
+            await _extraCostCollection.UpdateOneAsync(filter, update);
+            return extraCost;
+        }
     }
 }

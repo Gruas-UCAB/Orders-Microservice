@@ -13,6 +13,8 @@ using OrdersMicroservice.src.order.application.commands.cancel_order;
 using OrdersMicroservice.src.order.application.commands.cancel_order.types;
 using OrdersMicroservice.src.order.application.commands.create_order;
 using OrdersMicroservice.src.order.application.commands.create_order.types;
+using OrdersMicroservice.src.order.application.commands.edit_order_extra_costs;
+using OrdersMicroservice.src.order.application.commands.edit_order_extra_costs.types;
 using OrdersMicroservice.src.order.application.commands.finish_order;
 using OrdersMicroservice.src.order.application.commands.finish_order.types;
 using OrdersMicroservice.src.order.application.commands.locate_order;
@@ -389,5 +391,17 @@ namespace OrdersMicroservice.src.order.infrastructure
             return Ok("The extra costs have been added");
         }
 
+        [HttpPatch("edit-extra-costs/{orderId}")]
+        public async Task<IActionResult> EditExtraCosts([FromBody] EditExtraCostsDto data, string orderId)
+        {
+            var service = new EditOrderExtraCostsCommandHandler(_orderRepository, _contractRepository, _extraCostRepository);
+            var response = await service.Execute(new EditOrderExtraCostsCommand(orderId, data.ExtraCosts));
+            if (response.IsFailure)
+            {
+                return BadRequest(new { errorMessage = response.ErrorMessage() });
+            }
+
+            return Ok("The extra costs has been edited succesfully");
+        }
     }
 }

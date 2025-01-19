@@ -24,5 +24,15 @@ namespace OrdersMicroservice.src.order.domain.entities.extraCost
         {
             return _price.GetExtraCostPrice();
         }
+
+        public void SetPrice(ExtraCostPrice price)
+        {
+            _price = price;
+        }
+
+        public void SetDescription(ExtraCostDescription description)
+        {
+            _description = description;
+        }
     }
 }

@@ -4,9 +4,12 @@ using OrdersMicroservice.core.Application;
 using OrdersMicroservice.src.extracost.domain.value_objects;
 using OrdersMicroservice.src.order.application.commands.create_extra_cost;
 using OrdersMicroservice.src.order.application.commands.create_extra_cost.types;
+using OrdersMicroservice.src.order.application.commands.update_extra_cost;
+using OrdersMicroservice.src.order.application.commands.update_extra_cost.types;
 using OrdersMicroservice.src.order.application.repositories;
 using OrdersMicroservice.src.order.application.repositories.dto;
 using OrdersMicroservice.src.order.application.repositories.exceptions;
+using OrdersMicroservice.src.order.infrastructure.dto;
 using OrdersMicroservice.src.order.infrastructure.validators;
 
 namespace OrdersMicroservice.src.order.infrastructure
@@ -78,6 +81,19 @@ namespace OrdersMicroservice.src.order.infrastructure
                 Description = extraCost.Unwrap().GetDescription(),
                 Price = extraCost.Unwrap().GetPrice()
             });
+        }
+
+        [HttpPatch("update/{id}")]
+        public async Task<IActionResult> UpdateExtraCost([FromBody] UpdateExtraCostDto data, string id)
+        {
+            if (data.DefaultPrice == null && data.Description == null)
+                return BadRequest(new { errorMessage = "defaultPrice and description can not be null at the same time" });
+            var service = new UpdateExtraCostCommandHandler(_extraCostRepository);
+            var response = await service.Execute(new UpdateExtraCostCommand(id, data.Description, data.DefaultPrice));
+            if (response.IsFailure)
+                return BadRequest(new { errorMessage = response.ErrorMessage()});
+            var extraCostData = response.Unwrap();
+            return Ok("The extra cost has been updated succesfully");
         }
     }
 }
