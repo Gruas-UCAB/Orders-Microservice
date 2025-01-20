@@ -18,7 +18,8 @@ namespace OrdersMicroservice.src.order.domain.services
                 return new OrderCost(data.Order.GetCost());
             }
             data.Order.CostNotCoveredByPolicy();
-            return new OrderCost(data.Order.GetCost() + extraCostsTotal - policy.GetMonetaryCoverage());
+            var cost = data.Order.GetCost() + extraCostsTotal - policy.GetMonetaryCoverage();
+            return (cost < 0) ? new OrderCost(cost * -1) : new OrderCost(cost);
         }
     }
 }

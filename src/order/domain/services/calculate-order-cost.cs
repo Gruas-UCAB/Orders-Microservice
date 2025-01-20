@@ -18,7 +18,8 @@ namespace OrdersMicroservice.src.order.domain.services
             data.Order.CostNotCoveredByPolicy();
             var baseKmPrice = policy.GetBaseKmPrice();
             var monetaryCoverage = policy.GetMonetaryCoverage();
-            return new OrderCost(data.TotalDistance * baseKmPrice - monetaryCoverage);
+            var cost = data.TotalDistance * baseKmPrice - monetaryCoverage;
+            return (cost < 0) ? new OrderCost(cost * -1) : new OrderCost(cost);
         }
     }
 }
