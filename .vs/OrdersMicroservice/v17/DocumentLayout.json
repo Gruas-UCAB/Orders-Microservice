@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\domain\\services\\calculate-order-cost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\domain\\services\\calculate-order-cost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\infrastructure\\order-controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,67 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 295,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "assign-conductor.command-handler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs",
+              "RelativeDocumentMoniker": "src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs",
+              "RelativeToolTip": "src\\order\\application\\commands\\assign conductor\\assign-conductor.command-handler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T18:28:00.037Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "calculate-order-cost.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\domain\\services\\calculate-order-cost.cs",
-              "RelativeDocumentMoniker": "src\\order\\domain\\services\\calculate-order-cost.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\domain\\services\\calculate-order-cost.cs",
-              "RelativeToolTip": "src\\order\\domain\\services\\calculate-order-cost.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:04:00.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "calculate-order-cost-with-extra-costs.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs",
-              "RelativeDocumentMoniker": "src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs*",
-              "RelativeToolTip": "src\\order\\domain\\services\\calculate-order-cost-with-extra-costs.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:01:03.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "add-extra-costs-to-order.command-handler.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "RelativeDocumentMoniker": "src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "RelativeToolTip": "src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T15:56:41.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "order-controller.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\infrastructure\\order-controller.cs",
               "RelativeDocumentMoniker": "src\\order\\infrastructure\\order-controller.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\infrastructure\\order-controller.cs",
               "RelativeToolTip": "src\\order\\infrastructure\\order-controller.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAUwIABAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC8AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T15:56:26.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-20T15:56:26.6Z"
             }
           ]
         }

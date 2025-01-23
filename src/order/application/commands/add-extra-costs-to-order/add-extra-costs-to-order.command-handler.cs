@@ -27,7 +27,9 @@ namespace OrdersMicroservice.src.order.application.commands.add_extra_costs_to_o
                 return Result<AddExtraCostsToOrderResponse>.Failure(new OrderNotFoundExcepion());
             }
             var order = orderFind.Unwrap();
-            if (!string.Equals(order.GetStatus(), "localizado", StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(order.GetStatus(), "localizado", StringComparison.OrdinalIgnoreCase) &&
+                !string.Equals(order.GetStatus(), "en proceso", StringComparison.OrdinalIgnoreCase) &&
+                !string.Equals(order.GetStatus(), "finalizado", StringComparison.OrdinalIgnoreCase) )
             {
                 return Result<AddExtraCostsToOrderResponse>.Failure(new ExtraCostsCantBeAddedException());
             }

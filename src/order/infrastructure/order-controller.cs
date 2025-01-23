@@ -35,7 +35,7 @@ namespace OrdersMicroservice.src.order.infrastructure
 {
     [Route("order")]
     [ApiController]
-    [Authorize(Policy = "CreationalOrderUser")]
+    [Authorize]
     public class OrderController(IIdGenerator<string> idGenerator, IOrderRepository orderRepository, 
         IContractRepository contractRepository, IExtraCostRepository extraCostRepository, 
         IRestClient restClient, IBus bus, IPublishEndpoint publishEndpoint) : Controller

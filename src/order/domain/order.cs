@@ -175,7 +175,7 @@ namespace OrdersMicroservice.src.order.domain
 
         private void OnExtraCostsAssignedEvent(ExtraCostsAssigned Event)
         {
-            _extraCosts = Event.ExtraCosts;
+            Event.ExtraCosts.ForEach(e => _extraCosts.Add(e));
         }
 
         private void OnOrderPayedEvent(OrderPayed Event)

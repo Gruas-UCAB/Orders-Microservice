@@ -24,6 +24,9 @@ namespace OrdersMicroservice.src.order.application.commands.assign_conductor
         {
             try
             {
+                var conductorHasOrder = await _orderRepository.GetCurrentOrderByConductorId(new ConductorAssignedId(data.ConductorId));
+                if (conductorHasOrder.HasValue())
+                    return Result<AssignConductorResponse>.Failure(new ConductorAlreadyHasOrderAssignedException());
                 var orderFind = await _orderRepository.GetOrderById(new OrderId(data.OrderId));
                 if (!orderFind.HasValue())
                     return Result<AssignConductorResponse>.Failure(new OrderNotFoundExcepion());
