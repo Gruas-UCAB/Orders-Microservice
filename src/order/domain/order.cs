@@ -127,6 +127,11 @@ namespace OrdersMicroservice.src.order.domain
             return _isActive;
         }
 
+        public void RemoveConductorAssigned()
+        {
+            _conductorAssignedId = null;
+        }
+
         public void ChangeStatus()
         {
             _isActive = !_isActive;

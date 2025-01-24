@@ -162,3 +162,14 @@ C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyect
 C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\obj\Debug\net8.0\OrdersMicroservice.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\FirebaseAdmin.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Google.Api.Gax.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\System.Management.dll
+C:\Users\Admin\Documents\Universidad\9no Semestre\Desarrollo de Software\Proyecto\gruas-ucab-backend\MicroServices\Orders-Microservice\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|c:\\users\\admin\\documents\\universidad\\9no semestre\\desarrollo de software\\proyecto\\gruas-ucab-backend\\microservices\\orders-microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDC1000B-D1C5-4257-81A8-46AC8CE30984}|OrdersMicroservice.csproj|solutionrelative:src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 295,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "update-extra-cost.command-handler.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs",
-              "RelativeDocumentMoniker": "src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs",
-              "RelativeToolTip": "src\\order\\application\\commands\\update-extra-cost\\update-extra-cost.command-handler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T03:49:11.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "add-extra-costs-to-order.command-handler.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "RelativeDocumentMoniker": "src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "RelativeToolTip": "src\\order\\application\\commands\\add-extra-costs-to-order\\add-extra-costs-to-order.command-handler.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCoAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T02:07:30.856Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

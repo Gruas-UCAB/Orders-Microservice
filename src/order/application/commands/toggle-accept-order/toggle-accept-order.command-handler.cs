@@ -35,6 +35,7 @@ namespace OrdersMicroservice.src.order.application.commands.toggle_accept_order
             else
             {
                 order.SetStatus(new OrderStatus("por asignar"));
+                order.RemoveConductorAssigned();
                 await _orderRepository.UpdateOrder(order);
                 await _publishEndpoint.Publish(new ConductorRejectedOrder(Guid.Parse(order.GetId())));
             }
