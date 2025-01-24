@@ -38,6 +38,15 @@ builder.Services.AddScoped<IOrderRepository, MongoOrderRepository>();
 builder.Services.AddScoped<IExtraCostRepository, MongoExtraCostRepository>();
 builder.Services.AddTransient<IValidator<CreateExtraCostCommand>, CreateExtraCostCommandValidator>();
 builder.Services.AddTransient<IValidator<CreateContractCommand>, CreateContractCommandValidator>();
+builder.Services.Configure<FirebaseMessagingSettings>(options =>
+{
+    options.ApiKey = Environment.GetEnvironmentVariable("FIREBASE_API_KEY");
+    options.SenderId = Environment.GetEnvironmentVariable("FIREBASE_SENDER_ID");
+    options.ProjectId = Environment.GetEnvironmentVariable("FIREBASE_PROJECT_ID");
+});
+builder.Services.AddSingleton<IMessagingService, FirebaseNotificationSender>();
+builder.Services.AddSingleton<IMessagingClient, FirebaseMessagingClient>();
+builder.Services.AddSingleton<INotificationAppClient, FirebaseAppClient>();
 
 builder.Services.AddMassTransit(busConfigurator =>
 {

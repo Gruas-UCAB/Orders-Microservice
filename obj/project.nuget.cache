@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EQaWVBKJPpU=",
+  "dgSpecHash": "cYd1HkeDxeM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\Universidad\\9no Semestre\\Desarrollo de Software\\Proyecto\\gruas-ucab-backend\\MicroServices\\Orders-Microservice\\OrdersMicroservice.csproj",
   "expectedPackageFiles": [
@@ -8,12 +8,19 @@
     "C:\\Users\\Admin\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\firebaseadmin\\3.1.0\\firebaseadmin.3.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.api.gax\\4.8.0\\google.api.gax.4.8.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.api.gax.rest\\4.8.0\\google.api.gax.rest.4.8.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis\\1.69.0\\google.apis.1.69.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis.auth\\1.69.0\\google.apis.auth.1.69.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\google.apis.core\\1.69.0\\google.apis.core.1.69.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\masstransit\\8.3.4\\masstransit.8.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\masstransit.abstractions\\8.3.4\\masstransit.abstractions.8.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\masstransit.mongodb\\8.3.4\\masstransit.mongodb.8.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\masstransit.rabbitmq\\8.3.4\\masstransit.rabbitmq.8.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration\\1.1.2\\microsoft.extensions.configuration.1.1.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
@@ -44,6 +51,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\mongodb.driver.gridfs\\2.30.0\\mongodb.driver.gridfs.2.30.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\mongodb.libmongocrypt\\1.12.0\\mongodb.libmongocrypt.1.12.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\rabbitmq.client\\7.0.0\\rabbitmq.client.7.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -71,8 +79,10 @@
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\7.2.0\\swashbuckle.aspnetcore.swaggerui.7.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.codedom\\7.0.0\\system.codedom.7.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.collections.immutable\\8.0.0\\system.collections.immutable.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
@@ -90,6 +100,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.management\\7.0.2\\system.management.7.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
@@ -132,12 +143,5 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  "logs": []
 }
